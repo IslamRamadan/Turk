@@ -1,0 +1,76 @@
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1201px) {
+
+    
+}
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = 1025px to 1280px
+*/
+
+
+
+@media (min-width: 990px) and (max-width: 1200px) {
+
+    
+    
+}
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 989px) {
+
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = 481px to 767px
+*/
+@media (min-width: 571px) and (max-width: 767px) { 
+  .logo{
+    width: 100px
+}
+ .services-list li {
+    height: 135px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 25px 2px;
+    width: 135px;  
+    
+}
+}
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = 320px to 479px
+*/
+@media (min-width: 0px) and (max-width: 570px) {
+   
+   .logo{
+    width: 100px
+}
+    .services-list li {
+    height: 135px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 25px 2px;
+    width: 135px;
+    }
+    .container ,.container-fluid{
+        padding: 0px!important;
+    }
+.navbar-expand .navbar-nav .nav-link {
+    padding-right: .3rem!important;
+        padding-left: .3rem!important;
+
+}
+    .arabic{
+        font-size: 17px;
+    }   
+}
