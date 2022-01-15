@@ -7,89 +7,130 @@
 @endsection
 @section('content')
 
+<div  class=" relative1 " >
+    <div class="abs w-100">
+        <h4 class="custom-h4">Blog</h4>
+        <h1>Blog</h1>
 
-    @if(Lang::locale()=='ar')
+    </div>
+</div>
 
-        <!-----start carousel --->
-        <div  class=" relative " >
-            <img class="d-block w-100 h" src="{{asset('front/img/s.jpg')}} " alt="1 slide">
-            <div class="abs w-100">
-                <h2>@lang('site.blog')</h2>
-                <a href="">@lang('site.home')</a>
-                >>
-                <a href="">@lang('site.blog')</a>
-            </div>
-        </div>
-        <!--- end head --->
-        <!--- -->
-        <div class="container-fluid  ">
-            <div class="container  ">
-                <br>
-                <div class="row  ">
-                    <h2  class="text-center col-12">@lang('site.blog')
-
-                        <hr>
-                    </h2>
-                    @foreach($posts as $post)
-                        <div class="col-md-6">
-                            <h4>{{$post->title_ar}}</h4>
-
-                            <p>{{$post->content_ar}}</p>
-                        </div>
-                        <div class="text-center col-md-6">
-                            <img id="myImg" src="{{asset($post->img)}}" class="w-100">
-                            <br><br>
-                        </div>
-                    @endforeach
+<section class="news-hr section mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h3>My mall News</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, enim.</p>
                 </div>
-                <br><br>   <br><br>  </div></div>
-        <!--- -->
-    @else
-
-        <!-----start carousel --->
-        <div  class=" relative " >
-            <img class="d-block w-100 h" src="{{asset('front/img/s.jpg')}}" alt="1 slide">
-            <div class="abs w-100">
-                <h2>@lang('site.blog')</h2>
-                <a href="">@lang('site.home')</a>
-                >>
-                <a href="">@lang('site.blog')</a>
             </div>
         </div>
-        <!--- end head --->
-        <!--- -->
-        <div class="container-fluid  ">
-            <div class="container  ">
-                <br>
-                <div class="row  ">
-
-                    @foreach($posts as $post)
-
-                        <div class="text-center col-md-6">
-                            <a href="{{asset($post->img)}}" target="_blank">
-                                <img id="myImg" src="{{asset($post->img)}}" class="w-100">
-                            </a>
-                            <br><br>
+        <div class="row no-gutters">
+            <div class="col-lg-6">
+                <article class="news-post-hr">
+                    <div class="post-thumb">
+                        <a href="news-single.html">
+                            <img src="{{url('front/img/20.webp')}}" alt="post-image" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="post-contents border-top">
+                        <div class="post-title">
+                            <h6><a href="news-single.html">Default title here</a></h6>
+                        </div>
+                        <div class="post-exerpts">
+                            <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed doeiuse tempor incididunt ut
+                            </p>
                         </div>
 
-                        <h2  class="text-center col-12">@lang('site.blog')
-
-                            <hr>
-                        </h2>
-                        <div class="col-md-6">
-                            <h4>{{$post->title_en}}</h4>
-
-                            <p>{{$post->content_en}}</p>
-
+                        <div class="date">
+                            <h4>20<span>May</span></h4>
                         </div>
-                    @endforeach         </div></div>
-            <br><br>
+                        <div class="more">
+                            <a href="news-single.html">Show more</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-6">
+                <article class="news-post-hr">
+                    <div class="post-thumb">
+                        <a href="news-single.html">
+                            <img src="{{url('front/img/20.webp')}}" alt="post-image" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="post-contents border-top">
+                        <div class="post-title">
+                            <h6><a href="news-single.html">Default title here</a></h6>
+                        </div>
+                        <div class="post-exerpts">
+                            <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed doeiuse tempor incididunt ut
+                            </p>
+                        </div>
 
-            <br><br></div>
-        <!--- -->
+                        <div class="date">
+                            <h4>20<span>May</span></h4>
+                        </div>
+                        <div class="more">
+                            <a href="news-single.html">Show more</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-6">
+                <article class="news-post-hr">
+                    <div class="post-thumb">
+                        <a href="news-single.html">
+                            <img src="{{url('front/img/20.webp')}}" alt="post-image" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="post-contents">
+                        <div class="post-title">
+                            <h6><a href="news-single.html">Default title here</a></h6>
+                        </div>
+                        <div class="post-exerpts">
+                            <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed doeiuse tempor incididunt ut
+                            </p>
+                        </div>
 
+                        <div class="date">
+                            <h4>20<span>May</span></h4>
+                        </div>
+                        <div class="more">
+                            <a href="news-single.html">Show more</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-6">
+                <article class="news-post-hr">
+                    <div class="post-thumb">
+                        <a href="news-single.html">
+                            <img src="{{url('front/img/20.webp')}}" alt="post-image" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="post-contents">
+                        <div class="post-title">
+                            <h6><a href="news-single.html">Default title here</a></h6>
+                        </div>
+                        <div class="post-exerpts">
+                            <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed doeiuse tempor incididunt ut
+                            </p>
+                        </div>
 
-    @endif
+                        <div class="date">
+                            <h4>20<span>May</span></h4>
+                        </div>
+                        <div class="more">
+                            <a href="news-single.html">Show more</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====  End of News  ====-->
 
 
 @endsection

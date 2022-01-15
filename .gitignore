@@ -10,3 +10,10 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+.gitignore
+.htaccess
+.index.php
+/public/.index.php
+/public/.htaccess
+/public/index.php
+/public/htaccess

@@ -9,15 +9,11 @@
 @section('content')
 
 <!-----start carousel --->
-<div  class=" relative " >
-    <img class="d-block w-100 h" src="{{asset('front/img/s.jpg')}}" alt="1 slide">
+<div  class=" relative1 " >
     <div class="abs w-100">
-        <h2>ا@lang('site.contact_us')
-        </h2>
-        <a href="">@lang('site.home')</a>
-        >>
-        <a href="">@lang('site.contact_us')
-        </a>
+        <h4 class="custom-h4">Contact Us</h4>
+        <h1>We Are Happy To Receive Your Inquiries And Suggestions.</h1>
+
     </div>
 </div>
 <!--- end head --->
@@ -72,7 +68,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label"></label>
                         <div class="col-sm-9">
-                            <button type="submit" class="btn bg-main" >@lang('site.send')</button>
+                            <button type="submit" class="btn btn-primary" >@lang('site.send')</button>
                         </div>
                     </div>
 

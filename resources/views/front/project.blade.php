@@ -8,93 +8,127 @@
 @endsection
 @section('content')
 
+  <div  class=" relative1 " >
+    <div class="abs w-100">
+        <h4 class="custom-h4">PRODUCTS & SERVICES</h4>
+        <h1>Our Dry Ice Products</h1>
+       <h1>Our services</h1>
+    </div>
+</div>
+<div class="container text-center center-p">
+    <br>
 
-    @if(Lang::locale()=='ar')
+    <h4 class="mb-4">DRY ICE TRANSPORT AND STORAGE PRODUCTS:</h4>
 
+    <h1>Our solutions for your food transportation and storage needs</h1>
+    <p>Carbon, meets your dry ice cleaning and dry ice supply needs on time. Saves you and your business time</p>
+    <br>
 
-        <!-----start carousel --->
-        <div  class=" relative " >
-            <img class="d-block w-100 h" src="{{asset('front/img/s.jpg')}}" alt="1 slide">
-            <div class="abs w-100">
-                <h2>    @lang('site.projects')</h2>
-                <a href="">    @lang('site.home')
-                </a>
-                >>
-                <a href="">    {{$service->title_ar}}
-                </a>
-            </div>
-        </div>
-        <!--- end head --->
-        <!--- -->
-        <div class="container-fluid  ">
-            <div class="container  ">
-                <br>
-                <div class="row  ">
-                    <h2  class="text-center col-12">{{$service->name_ar}}
+</div>
 
 
-                        <hr>
-                    </h2>
+<br>
 
-                    <p class="col-12"><br>{{$service->content_ar}}</p>
-                    <br><br>
-                    <div class="text-center col-12">
-                        @foreach($service_images as $service_image)
-                            <a href="{{asset('myfiles/'.$service_image->img)}}" target="_blank">
-                            <img id="myImg" src="{{asset('myfiles/'.$service_image->img)}}" class="img-services" style="width: 300px;height: 223px">
-                            </a>
-                        @endforeach
+<h4 class="custom-h4 mb-5" >OUR DRY ICE SERVICE AND SUPPLY CHANNELS:
+</h4>
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+            <div class="" style="position: relative">
+                <img src="{{url('front/img/26.webp')}}" alt="" class=" w-100 ">
+
+
+
+
+
+                <div class="img-div4">
+                    <div class="d-flex justify-content-between align-items-center">
+                                    <h5>Styrofoam Box Products
+                                    </h5>
+
+                                    <h6>
+                                        More &nbsp; &nbsp; <i class="fas fa-arrow-right text-light"></i>
+                                    </h6>
+
                     </div>
-                    <br><br>
-                </div>
-            </div></div>
-        <!--- -->
-
-
-
-    @else
-
-        <!-----start carousel --->
-        <div  class=" relative " >
-            <img class="d-block w-100 h" src="{{asset('front/img/s.jpg')}}" alt="1 slide">
-            <div class="abs w-100">
-                <h2>    @lang('site.projects')</h2>
-                <a href="">    @lang('site.home')
-                </a>
-                >>
-                <a href="">    {{$service->title_en}}
-                </a>
-            </div>
-        </div>
-        <!--- end head --->
-        <!--- -->
-        <div class="container-fluid  ">
-            <div class="container  ">
-                <br>
-                <div class="row  ">
-                    <h2  class="text-center col-12">{{$service->name_en}}
-
-
-                        <hr>
-                    </h2>
-
-                    <p class="col-12"><br>{{$service->content_en}}</p>
-                    <br><br>
-                    <div class="text-center col-12">
-                        @foreach($service_images as $service_image)
-                            <a href="{{asset('myfiles/'.$service_image->img)}}" target="_blank">
-
-                            <img id="myImg" src="{{asset('myfiles/'.$service_image->img)}}" class="img-services" style="width: 300px;height: 223px">
-                            </a>
-                        @endforeach
                     </div>
-                    <br><br>
-                </div>
-            </div></div>
-        <!--- -->
+
+            </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+            <div class="" style="position: relative">
+                <img src="{{url('front/img/25.webp')}}" alt="" class=" w-100 ">
 
 
 
-    @endif
+                <div class="img-div4">
+                    <div class="d-flex justify-content-between align-items-center">
+                                    <h5>Styrofoam Box Products
+                                    </h5>
+
+                                    <h6>
+                                        More &nbsp; &nbsp; <i class="fas fa-arrow-right text-light"></i>
+                                    </h6>
+
+                    </div>
+                    </div>
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+</div>
+
+<div class="container-fluid">
+    <br>
+
+    <h4 class="custom-h4" >USAGE AREAS:
+    </h4>
+
+    <div class="row">
+        <div class="col-md-4 col-12 before-icon">
+            <i class="fas fa-arrow-right main-color"></i>
+            Cold chain
+        </div>
+        <div class="col-md-4 col-12 before-icon">
+            <i class="fas fa-arrow-right main-color"></i>
+            Cold chain
+        </div>
+        <div class="col-md-4 col-12 before-icon">
+            <i class="fas fa-arrow-right main-color"></i>
+            Cold chain
+        </div>
+        <div class="col-md-4 col-12 before-icon">
+            <i class="fas fa-arrow-right main-color"></i>
+            Cold chain
+        </div>
+        <div class="col-md-4 col-12 before-icon">
+            <i class="fas fa-arrow-right main-color"></i>
+            Cold chain
+        </div>
+        <div class="col-md-4 col-12 before-icon">
+            <i class="fas fa-arrow-right main-color"></i>
+            Cold chain
+        </div>
+        <div class="col-md-4 col-12 before-icon">
+            <i class="fas fa-arrow-right main-color"></i>
+            Cold chain
+        </div>
+        <div class="col-md-4 col-12 before-icon">
+            <i class="fas fa-arrow-right main-color"></i>
+            Cold chain
+        </div>
+    </div>
+    </div>
+
 
 @endsection

@@ -8,195 +8,147 @@
 @endsection
 @section('content')
 
+<div class="container-fluid  p-5">
+    <div class="" style="position: relative">
 
-    @if(Lang::locale()=='ar')
+    <img src="{{url('front/img/20.webp')}}" class="w-100" alt="">
+    <div class="img-div3" >
+        <h2 class="mb-3">If coldness is of vital importance to you!
+        </h2>
+        <h2 class="c-b">Specially insulated you should review our containers
+        </h2>
 
-        <!-----start carousel --->
-        <div  class=" relative " >
-            <img class="d-block w-100 h" src="{{asset('front/img/s.jpg')}}" alt="1 slide">
-            <div class="abs w-100">
-                <h2>    @lang('site.projects')</h2>
-                <a href="">    @lang('site.home')
-                </a>
-                >>
-                <a href="">    @lang('site.projects')
-                </a>
+
+
+        </div>
+    </div>
+</div>
+<div class="container text-center center-p1">
+
+    <div class="component">
+        <blockquote class="callout quote EN">
+           <h2> We produce customized solutions for your business
+           </h2>
+           </blockquote>
+        </div>
+        </div>
+
+<div class="container-fluid  p-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-12 mb-3"  >
+            <div class="" style="background-color: rgb(35, 159, 168)">
+            <h5 class="text-center pt-3">Olive Polyethylene BAC / SANDIK</h5>
+            <img src="{{url('front/img/21.webp')}}" class="w-100 cust-hght" alt="">
+        </div>
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 mb-3"  >
+            <div class="" style="background-color: rgb(15, 128, 99)">
+            <h5 class="text-center pt-3">Olive Polyethylene BAC / SANDIK</h5>
+            <img src="{{url('front/img/22.webp')}}" class="w-100 cust-hght" alt="">
+        </div>
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 mb-3"  >
+            <div class="" style="background-color: rgb(32, 134, 194)">
+            <h5 class="text-center pt-3">Olive Polyethylene BAC / SANDIK</h5>
+            <img src="{{url('front/img/23.webp')}}" class="w-100 cust-hght" alt="">
+        </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="container-fluid  p-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-12 mb-3"  >
+            <div class="" >
+                <img src="{{url('front/img/24.webp')}}" class="w-100 cust-hght" alt="">
             </div>
         </div>
-        <!--- end head --->
-        <!--- -->
-        <div class="container-fluid">
-            <div class="container  ">
-                <br>
-                <div class="row  ">
-                    <h2  class="text-center col-12">@lang('site.projects')
+        <div class="col-lg-8 col-md-6 col-12 mb-3"  >
+            <h4>TRAY 160</h4>
+            <p>Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                </p>
+        </div>
+    </div>
+</div>
 
-
-                        <hr>
-                    </h2>
-
-                    <p class="col-12 "><br>@lang('site.our_projects')</p>
-                    <br><br>
-                    <br><br>
-
-                    @foreach($services as $service)
-                        <div class="col-md-6">
-                            <h4>{{$service->title_ar}}</h4>
-
-                            <p>{{$service->content_ar}}</p>
-
-                            <a href="{{route('my_projects.show',$service->id)}}" class="btn btn-primary mb-3">@lang('site.view_more')</a>
-                        </div>
-                        <div class="text-center col-md-6">
-                            <a href="{{asset($service->img)}}" target="_blank">
-                                <img id="myImg" src="{{asset($service->img)}}" class="w-100">
-                            </a>
-                            <br><br>
-                        </div>
-                    @endforeach         </div></div>
-            <br><br>
-
-            <br><br></div>
-        <!--- -->
-
-
-    @else
-
-
-        {{--<!-----start carousel --->--}}
-        {{--<div  class=" relative " >--}}
-            {{--<img class="d-block w-100 h" src="{{asset('front/img/s.jpg')}}" alt="1 slide">--}}
-            {{--<div class="abs w-100">--}}
-                {{--<h2>    @lang('site.projects')</h2>--}}
-                {{--<a href="">    @lang('site.home')--}}
-                {{--</a>--}}
-                {{-->>--}}
-                {{--<a href="">    @lang('site.projects')--}}
-                {{--</a>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-        {{--<!--- end head --->--}}
-        {{--<!--- -->--}}
-        {{--<div class="container-fluid  ">--}}
-            {{--<div class="container  ">--}}
-                {{--<br>--}}
-                {{--<div class="row  ">--}}
-                    {{--<h2  class="text-center col-12">@lang('site.projects')--}}
-
-
-                        {{--<hr>--}}
-                    {{--</h2>--}}
-
-                    {{--<p class="col-12"><br>@lang('site.our_projects')</p>--}}
-                    {{--<br><br>--}}
-
-
-
-
-                    {{--<div class="row">--}}
-                        {{--@foreach($services as $service)--}}
-                        {{--<div class="col-md-3 col-sm-6 col-12 mar">--}}
-
-                            {{--<div class="card " style="width: 18rem;">--}}
-                                {{--<img class="card-img-top" src="{{asset('myfiles/'.$service->img)}}" alt="Card image cap">--}}
-                                {{--<div class="card-body" id="card-body">--}}
-
-                                    {{--<h5 class="text-center card-title">{{$service->title_en}}</h5>--}}
-                                    {{--<div class="col-md-12 text-center">--}}
-                                        {{--<a href="#" class="text-center btn btn-primary">@lang('site.view_more')</a>--}}
-
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-
-                        {{--</div>--}}
-
-                            {{--@endforeach--}}
-
-                    {{--</div>--}}
-
-
-
-
-
-
-                    {{--<br><br>--}}
-                {{--</div>--}}
-            {{--</div></div>--}}
-        {{--<!--- -->--}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-----start carousel --->
-        <div  class=" relative " >
-            <img class="d-block w-100 h" src="{{asset('front/img/s.jpg')}}" alt="1 slide">
-            <div class="abs w-100">
-                <h2>    @lang('site.projects')</h2>
-                <a href="">    @lang('site.home')
-                </a>
-                >>
-                <a href="">    @lang('site.projects')
-                </a>
+<div class="container-fluid  p-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-12 mb-3"  >
+            <div class="" >
+                <img src="{{url('front/img/24.webp')}}" class="w-100 cust-hght" alt="">
             </div>
         </div>
-        <!--- end head --->
-        <!--- -->
-        <div class="container-fluid  mt-3">
-            <div class="container  ">
-                <br>
-                <div class="row  ">
-                    <h2  class="text-center col-12">@lang('site.projects')
+        <div class="col-lg-8 col-md-6 col-12 mb-3"  >
+            <h4>TRAY 160</h4>
+            <p>Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                </p>
+        </div>
+    </div>
+</div>
 
+<div class="container-fluid  p-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-12 mb-3"  >
+            <div class="" >
+                <img src="{{url('front/img/24.webp')}}" class="w-100 cust-hght" alt="">
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-6 col-12 mb-3"  >
+            <h4>TRAY 160</h4>
+            <p>Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                </p>
+        </div>
+    </div>
+</div>
 
-                        <hr>
-                    </h2>
+<div class="container-fluid  p-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-12 mb-3"  >
+            <div class="" >
+                <img src="{{url('front/img/24.webp')}}" class="w-100 cust-hght" alt="">
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-6 col-12 mb-3"  >
+            <h4>TRAY 160</h4>
+            <p>Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                </p>
+        </div>
+    </div>
+</div>
 
-                    <p class="col-12"><br>@lang('site.our_projects')</p>
-                    <br><br>
-                    <br><br>
-                    @foreach($services as $service)
-                        <div class="col-md-6">
-                            <h4>{{$service->title_en}}</h4>
+<div class="container-fluid  p-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-12 mb-3"  >
+            <div class="" >
+                <img src="{{url('front/img/24.webp')}}" class="w-100 cust-hght" alt="">
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-6 col-12 mb-3"  >
+            <h4>TRAY 160</h4>
+            <p>Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                </p>
+        </div>
+    </div>
+</div>
 
-                            <p>{{$service->content_en}}</p>
-
-                            <a href="{{route('my_projects.show',$service->id)}}" class="btn btn-primary mb-3">@lang('site.view_more')</a>
-                        </div>
-                        <div class="text-center col-md-6">
-                            <a href="{{asset($service->img)}}" target="_blank">
-                            <img id="myImg" src="{{asset($service->img)}}" class="w-100">
-                            </a>
-                            <br><br>
-                        </div>
-                    @endforeach         </div></div>
-            <br><br>
-
-            <br><br></div>
-        <!--- -->
-
-
-
-
-
-
-
-
-
-
-    @endif
 
 @endsection
