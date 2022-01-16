@@ -57,7 +57,7 @@
     <div class="container  ">
         <div class="row  ">
             <nav class="navbar navbar-expand-lg col-12" id="start">
-                <a  href="{{route('home.index')}}">
+                <a  href="{{route('home.index')}}" class="p-2">
                     <img src="{{asset('front/img/logo.png')}}"  class="logo" >
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
