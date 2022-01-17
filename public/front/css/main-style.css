@@ -627,7 +627,6 @@
         }
         
         .news-hr .news-post-hr .post-contents .more {
-            text-align: right;
             margin-top: -25px;
         }
         
@@ -787,4 +786,12 @@
         
         .text-dir:lang(en) {
             text-align: left;
+        }
+        
+        .text-dir1:lang(ar) {
+            text-align: left;
+        }
+        
+        .text-dir1:lang(en) {
+            text-align: right;
         }

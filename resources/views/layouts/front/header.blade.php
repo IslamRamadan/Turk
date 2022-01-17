@@ -35,7 +35,7 @@
                     </li></ul>
             </nav>
         </div>
-        <div class="float-right text-right">
+        <div class="float-right text-dir">
             <nav class="navbar navbar-expand pad-0 " >
                 <ul class="navbar-nav pad-0">
 
@@ -71,7 +71,7 @@
                                 <div class=" dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     @lang('site.services')
                                 </div>
-                                <div class="dropdown-menu text-right" aria-labelledby="dropdownMenuButton" >
+                                <div class="dropdown-menu text-dir" aria-labelledby="dropdownMenuButton" >
                                     @foreach($my_sevices as $my_sevice )
                                         @if(Lang::locale()=='ar')
                                             <a class="dropdown-item" href="{{route('my_services.show',$my_sevice->id)}}">{{$my_sevice->name_ar}}</a>
@@ -92,7 +92,7 @@
                                 {{--<div class=" dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
                                     {{--@lang('site.our_works')--}}
                                 {{--</div>--}}
-                                {{--<div class="dropdown-menu text-right" aria-labelledby="dropdownMenuButton" >--}}
+                                {{--<div class="dropdown-menu text-dir" aria-labelledby="dropdownMenuButton" >--}}
                                     {{--@foreach($my_projects as $my_project)--}}
                                         {{--@if(Lang::locale()=='ar')--}}
                                             {{--<a class="dropdown-item" href="{{route('my_projects.show',$my_project->id)}}">{{$my_project->name_ar}}</a>--}}
@@ -116,7 +116,7 @@
                                 <div class=" dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     @lang('site.our_plans')
                                 </div>
-                                <div class="dropdown-menu text-right" aria-labelledby="dropdownMenuButton" >
+                                <div class="dropdown-menu text-dir" aria-labelledby="dropdownMenuButton" >
                                     @foreach($my_plans as $my_plan)
                                         @if(Lang::locale()=='ar')
                                             <a class="dropdown-item" href="{{route('my_plans.show',$my_plan->id)}}">{{$my_plan->name_ar}}</a>
@@ -149,7 +149,7 @@
 
                                     @endif
                                 </div>
-                                <div class="dropdown-menu  text-right" aria-labelledby="dropdownMenuButton" >
+                                <div class="dropdown-menu  text-dir" aria-labelledby="dropdownMenuButton" >
 
                                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
 

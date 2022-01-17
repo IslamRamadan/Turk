@@ -39,7 +39,7 @@
                         <div class="date">
                             <h4>20<span>May</span></h4>
                         </div>
-                        <div class="more">
+                        <div class="more text-dir1">
                             <a href="{{route('my_services.show',58)}}">Show more</a>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                         <div class="date">
                             <h4>20<span>May</span></h4>
                         </div>
-                        <div class="more">
+                        <div class="more text-dir1">
                             <a href="{{route('my_services.show',58)}}">Show more</a>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                         <div class="date">
                             <h4>20<span>May</span></h4>
                         </div>
-                        <div class="more">
+                        <div class="more text-dir1">
                             <a href="{{route('my_services.show',58)}}">Show more</a>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
                         <div class="date">
                             <h4>20<span>May</span></h4>
                         </div>
-                        <div class="more">
+                        <div class="more text-dir1">
                             <a href="{{route('my_services.show',58)}}">Show more</a>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                         <div class="date">
                             <h4>20<span>May</span></h4>
                         </div>
-                        <div class="more">
+                        <div class="more text-dir1">
                             <a href="{{route('my_services.show',58)}}">Show more</a>
                         </div>
                     </div>
@@ -174,7 +174,7 @@
                         <div class="date">
                             <h4>20<span>May</span></h4>
                         </div>
-                        <div class="more">
+                        <div class="more text-dir1">
                             <a href="{{route('my_services.show',58)}}">Show more</a>
                         </div>
                     </div>
