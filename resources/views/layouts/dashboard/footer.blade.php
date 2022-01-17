@@ -8,7 +8,7 @@
     <strong>Copyright &copy; 2020 <a style="color: rgb(12, 34, 199)" href="#">Company</a>.</strong> All rights reserved.
   </footer>
 
- 
+
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>

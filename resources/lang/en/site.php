@@ -119,12 +119,12 @@ return [
 
 
     'countries' =>'Countries',
-    
+
        'ads' => 'Ads',
-       
+
          'sales' => 'Sales',
-         
-         
+
+
          'finished' =>'Sold out',
          'profile' =>'Profile',
          'settings' => 'Settings',
@@ -319,7 +319,7 @@ Why Spend So Much Time And Energy On Home Cleaning When You Can Have A Cleaning 
 'new'=>'Add new',
 'how_works'=>'How it works',
 'why_works'=>'Why Choose Clean it',
-'home_address'=>'Office N0. M02-332,Golden Time Business Center,Skoda Auto Building, Opp. Terminal 2 Alaittihad Street Dubai, Phone: +971509857868',
+'home_address'=>'Kuwait',
 'happy'=>'We Are Happy To Receive Your Inquiries And Suggestions.',
 'follow_us'=>'Follow us',
     'services'=>'Services',
@@ -339,13 +339,13 @@ Why Spend So Much Time And Energy On Home Cleaning When You Can Have A Cleaning 
 'years_experience'=>'Years Experience',
 'add_plan'=>'Add plan',
 'add_work'=>'Add work',
-'employees'=>'Employees',
-'employees'=>'Employees',
-'employees'=>'Employees',
-'employees'=>'Employees',
-'employees'=>'Employees',
-'employees'=>'Employees',
-'employees'=>'Employees',
+'all_products'=>'Products',
+// 'employees'=>'Employees',
+// 'employees'=>'Employees',
+// 'employees'=>'Employees',
+// 'employees'=>'Employees',
+// 'employees'=>'Employees',
+// 'employees'=>'Employees',
 
 
 

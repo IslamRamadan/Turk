@@ -1,4 +1,4 @@
-<html >
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -66,7 +66,7 @@
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav mr-right pad-0">
                         <li class="nav-item "><a class="nav-link active" href="{{route('home.index')}}">@lang('site.home')</a></li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <div class="dropdown nav-link" >
                                 <div class=" dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     @lang('site.services')
@@ -85,7 +85,7 @@
 
                                 </div>
                             </div>
-                        </li>
+                        </li> --}}
 
                         {{--<li class="nav-item">--}}
                             {{--<div class="dropdown nav-link" >--}}
@@ -108,10 +108,10 @@
                             {{--</div>--}}
                         {{--</li>--}}
 
-                        <li class="nav-item "><a class="nav-link " href="{{route('my_projects.index')}}" >@lang('site.our_works')</a></li>
-                        <li class="nav-item "><a class="nav-link " href="{{route('post.index')}}" >@lang('site.blog')</a></li>
+                        <li class="nav-item "><a class="nav-link " href="{{route('my_projects.show',67)}}" >@lang('site.all_products')</a></li>
+                        <li class="nav-item "><a class="nav-link " href="{{route('my_plans.show',66)}}" >@lang('site.blog')</a></li>
                         <li class="nav-item "><a class="nav-link " href="{{route('about.index')}}" >@lang('site.about_us')</a></li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <div class="dropdown nav-link" >
                                 <div class=" dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     @lang('site.our_plans')
@@ -130,7 +130,7 @@
 
                                 </div>
                             </div>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item"><a class="nav-link " href="{{route('contacts.index')}}" >@lang('site.contact_us')</a></li>
 

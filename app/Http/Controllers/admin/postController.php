@@ -75,7 +75,7 @@ class postController extends Controller
             'title_ar' => 'required',
             'content_ar' => 'required',
             'content_en' => 'required',
-            'img' => 'required|mimes:jpg,jpeg,png|max:4100',
+            'img' => 'required|mimes:jpg,webp,jpeg,png|max:4100',
 
         ], $messeges);
 
@@ -83,7 +83,7 @@ class postController extends Controller
 
         if ($validator->fails()) {
             Alert::error('error', $validator->errors()->first());
-            return back();
+            return back()->withInput();
         }
 
        $img = $request->img;
@@ -186,7 +186,7 @@ class postController extends Controller
 
         if ($validator->fails()) {
             Alert::error('error', $validator->errors()->first());
-            return back();
+            return back()->withInput();
         }
 
 

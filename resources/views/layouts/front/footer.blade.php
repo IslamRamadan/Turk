@@ -3,7 +3,7 @@
         <br><br>
         <div class="row">
             <div class="col-12">
-                <h2>PRESTIGE CLEANSING </h2>
+                <h2>CARBON </h2>
                 <p>@lang('site.home_address')</p>
             </div>
             <div class="col-md-9">
@@ -31,7 +31,7 @@
 
                 </nav>
             </div>
-            <p class="col-12 text-center"><br><br>All rights reserved © 2020 | This template is made by <a href="https://bluezonekw.com/" target="_blank" class="">blue zone</a></p>
+            <p class="col-12 text-center"><br><br>All rights reserved © 2022 | This template is made by <a href="https://bluezonekw.com/" target="_blank" class="">blue zone</a></p>
 
         </div>
 

@@ -202,10 +202,10 @@ box-shadow: -1px 6px 40px -9px rgba(0,0,0,0.75);
                      </li>
                    -->
 <li class="dropdown messages-menu">
- 
+
   <li class="dropdown user user-menu">
-    
-  <a href="{{ route('user_logout') }}"  > تسجيل خروج</a>   
+
+  <a href="{{ route('user_logout') }}"  > تسجيل خروج</a>
     <ul class="dropdown-menu">
       <!-- User image -->
       <li class="user-header">
@@ -240,7 +240,7 @@ box-shadow: -1px 6px 40px -9px rgba(0,0,0,0.75);
       </li>
     </ul>
   </li>
- 
+
                 </ul>
             </div>
         </nav>

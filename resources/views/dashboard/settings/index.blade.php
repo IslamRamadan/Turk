@@ -30,14 +30,16 @@
              @if ($setting)
 
                     <?php
-                  
+
                   $about_app=$setting->about_app;
                    $about_app_en=$setting->about_app_en;
                     $strategy=$setting->strategy;
                    $strategy_en=$setting->strategy_en;
                   $currency=$setting->currency;
+                  $name=$setting->name;
+                  $name_en=$setting->name_en;
 
-                    
+
                       $color=$setting->color;
                       $color2=$setting->color2;
                     $id = $setting->id;
@@ -45,19 +47,22 @@
 			     	$android=$setting->android	;
 			     	$ios=$setting->ios	;
 			     	$contact_phone= $setting->contact_phone	;
-                   
+
                      ?>
 
              @else
 
                     <?php
-                    
-                   
+
+
                     $id = "";
 					$dolar= ""	;
 			        $contact_phone= ""	;
 			        $color= ""	;
 			        $colo2r="";
+			        $name="";
+			        $name_ar="";
+
 			        $android= ""	;
 			        $ios= ""	;
 
@@ -84,6 +89,21 @@
 
                   {{--])!!}--}}
                 {{--</div>--}}
+                <div class="form-group">
+                    <label>@lang('site.name_ar')</label>
+                  <input  class="form-control"  name="name" value="{{$name}}">
+               </div>
+                <div class="form-group">
+                    <label>@lang('site.name_en')</label>
+                  <input  class="form-control"  name="name_en" value="{{$name_en}}">
+               </div>
+                <div class="form-group">
+                    <label>@lang('site.logo')</label>
+                  <input type="file"  class="form-control"  name="logo" >
+               </div>
+               <img src="{{ asset('/storage/' . $setting->logo) }}" alt="" width="50%">
+
+
                  <div class="form-group">
                         <label>@lang('site.contact_phone')</label>
                       {!!  Form::text('contact_phone',$contact_phone,[
@@ -91,7 +111,7 @@
 
                       ])!!}
                     </div>
-                    
+
                      {{--<div class="form-group">--}}
                         {{--<label>@lang('site.color')--}}
                         {{--<span> @lang('site.choose_color')</span>--}}
@@ -102,7 +122,7 @@
 
                       {{--])!!}--}}
                     {{--</div>--}}
-                    
+
                      {{--<div class="form-group">--}}
                         {{--<label>@lang('site.sec_color')--}}
                         {{--<span>@lang('site.choose_color')</span>--}}
@@ -113,7 +133,7 @@
 
                       {{--])!!}--}}
                     {{--</div>--}}
-                    
+
                      {{--<div class="form-group">--}}
                         {{--<label>@lang('site.currency')</label>--}}
                       {{--{!!  Form::text('currency',$currency,[--}}
@@ -121,8 +141,8 @@
 
                       {{--])!!}--}}
                     {{--</div>--}}
-                    
-                    
+
+
                      <div class="form-group">
                         <label>@lang('site.ggl_play')</label>
                       {!!  Form::text('android',$android,[
@@ -130,7 +150,7 @@
 
                       ])!!}
                     </div>
-                    
+
                      <div class="form-group">
                         <label>@lang('site.app_store')</label>
                       {!!  Form::text('ios',$ios,[
@@ -138,48 +158,48 @@
 
                       ])!!}
                     </div>
-                    
-                    
+
+
                     <div class="form-group">
                          <label>@lang('site.about_app')</label>
                        <textarea  class="form-control" rows="10"  name="about_app">
                           {{$about_app}}
                        </textarea >
                     </div>
-                    
+
                      <div class="form-group">
                          <label>@lang('site.about_app_en')</label>
-                       <textarea  class="form-control" rows="10"  name="about_app_en">
+                       <textarea id="summernote" class="form-control" rows="10"  name="about_app_en">
                           {{$about_app_en}}
                        </textarea >
                     </div>
-                    
-                    
+
+
                      <div class="form-group">
                          <label>@lang("site.terms_and_condition")</label>
                        <textarea  class="form-control" rows="10"  name="strategy">
                           {{$strategy}}
                        </textarea >
                     </div>
-                    
+
                      <div class="form-group">
                          <label>@lang("site.terms_and_condition_en")</label>
                        <textarea  class="form-control" rows="10"  name="strategy_en">
                           {{$strategy_en}}
                        </textarea >
                     </div>
-                    
-                    
-                    
-                
-                
-
-         
 
 
-                    
 
-                  
+
+
+
+
+
+
+
+
+
 
 
                   <div class="form-group">
@@ -207,6 +227,7 @@
 
 
 
-  
+
 
 @endsection
+

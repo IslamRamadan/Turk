@@ -23,13 +23,13 @@
                 <article class="news-post-hr">
                     <div class="row">
                     <div class="col-md-6 col-12 post-thumb">
-                        <a href="news-single.html">
+                        <a href="{{route('my_services.show',58)}}">
                             <img src="{{url('front/img/20.webp')}}" alt="post-image" class="img-fluid">
                         </a>
                     </div>
                     <div class="col-md-6 col-12 post-contents border-top">
                         <div class="post-title">
-                            <h6><a href="news-single.html">Default title here</a></h6>
+                            <h6><a href="{{route('my_services.show',58)}}">Default title here</a></h6>
                         </div>
                         <div class="post-exerpts">
                             <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed doeiuse tempor incididunt ut
@@ -40,7 +40,7 @@
                             <h4>20<span>May</span></h4>
                         </div>
                         <div class="more">
-                            <a href="news-single.html">Show more</a>
+                            <a href="{{route('my_services.show',58)}}">Show more</a>
                         </div>
                     </div>
                 </div>
@@ -50,13 +50,13 @@
                 <article class="news-post-hr">
                     <div class="row">
                     <div class="col-md-6 col-12 post-thumb">
-                        <a href="news-single.html">
+                        <a href="{{route('my_services.show',58)}}">
                             <img src="{{url('front/img/26.webp')}}" alt="post-image" class="img-fluid">
                         </a>
                     </div>
                     <div class="col-md-6 col-12 post-contents border-top">
                         <div class="post-title">
-                            <h6><a href="news-single.html">Default title here</a></h6>
+                            <h6><a href="{{route('my_services.show',58)}}">Default title here</a></h6>
                         </div>
                         <div class="post-exerpts">
                             <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed doeiuse tempor incididunt ut
@@ -67,7 +67,7 @@
                             <h4>20<span>May</span></h4>
                         </div>
                         <div class="more">
-                            <a href="news-single.html">Show more</a>
+                            <a href="{{route('my_services.show',58)}}">Show more</a>
                         </div>
                     </div>
                 </div>
@@ -77,13 +77,13 @@
                 <article class="news-post-hr">
                     <div class="row">
                     <div class="col-md-6 col-12 post-thumb">
-                        <a href="news-single.html">
+                        <a href="{{route('my_services.show',58)}}">
                             <img src="{{url('front/img/24.webp')}}" alt="post-image" class="img-fluid">
                         </a>
                     </div>
                     <div class="col-md-6 col-12 post-contents border-top">
                         <div class="post-title">
-                            <h6><a href="news-single.html">Default title here</a></h6>
+                            <h6><a href="{{route('my_services.show',58)}}">Default title here</a></h6>
                         </div>
                         <div class="post-exerpts">
                             <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed doeiuse tempor incididunt ut
@@ -94,7 +94,7 @@
                             <h4>20<span>May</span></h4>
                         </div>
                         <div class="more">
-                            <a href="news-single.html">Show more</a>
+                            <a href="{{route('my_services.show',58)}}">Show more</a>
                         </div>
                     </div>
                 </div>
@@ -104,13 +104,13 @@
                 <article class="news-post-hr">
                     <div class="row">
                     <div class="col-md-6 col-12 post-thumb">
-                        <a href="news-single.html">
+                        <a href="{{route('my_services.show',58)}}">
                             <img src="{{url('front/img/21.webp')}}" alt="post-image" class="img-fluid">
                         </a>
                     </div>
                     <div class="col-md-6 col-12 post-contents border-top">
                         <div class="post-title">
-                            <h6><a href="news-single.html">Default title here</a></h6>
+                            <h6><a href="{{route('my_services.show',58)}}">Default title here</a></h6>
                         </div>
                         <div class="post-exerpts">
                             <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed doeiuse tempor incididunt ut
@@ -121,7 +121,7 @@
                             <h4>20<span>May</span></h4>
                         </div>
                         <div class="more">
-                            <a href="news-single.html">Show more</a>
+                            <a href="{{route('my_services.show',58)}}">Show more</a>
                         </div>
                     </div>
                 </div>
@@ -131,13 +131,13 @@
                 <article class="news-post-hr">
                     <div class="row">
                     <div class="col-md-6 col-12 post-thumb">
-                        <a href="news-single.html">
+                        <a href="{{route('my_services.show',58)}}">
                             <img src="{{url('front/img/23.webp')}}" alt="post-image" class="img-fluid">
                         </a>
                     </div>
                     <div class="col-md-6 col-12 post-contents border-top">
                         <div class="post-title">
-                            <h6><a href="news-single.html">Default title here</a></h6>
+                            <h6><a href="{{route('my_services.show',58)}}">Default title here</a></h6>
                         </div>
                         <div class="post-exerpts">
                             <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed doeiuse tempor incididunt ut
@@ -148,7 +148,7 @@
                             <h4>20<span>May</span></h4>
                         </div>
                         <div class="more">
-                            <a href="news-single.html">Show more</a>
+                            <a href="{{route('my_services.show',58)}}">Show more</a>
                         </div>
                     </div>
                 </div>
@@ -158,13 +158,13 @@
                 <article class="news-post-hr">
                     <div class="row">
                     <div class="col-md-6 col-12 post-thumb">
-                        <a href="news-single.html">
+                        <a href="{{route('my_services.show',58)}}">
                             <img src="{{url('front/img/25.webp')}}" alt="post-image" class="img-fluid">
                         </a>
                     </div>
                     <div class="col-md-6 col-12 post-contents border-top">
                         <div class="post-title">
-                            <h6><a href="news-single.html">Default title here</a></h6>
+                            <h6><a href="{{route('my_services.show',58)}}">Default title here</a></h6>
                         </div>
                         <div class="post-exerpts">
                             <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed doeiuse tempor incididunt ut
@@ -175,7 +175,7 @@
                             <h4>20<span>May</span></h4>
                         </div>
                         <div class="more">
-                            <a href="news-single.html">Show more</a>
+                            <a href="{{route('my_services.show',58)}}">Show more</a>
                         </div>
                     </div>
                 </div>

@@ -20,12 +20,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/about', 'front\homeController@about')->name('about.index');
     Route::get('/contacts', 'front\homeController@contacts_index')->name('contacts.index');
     Route::post('/contacts', 'front\homeController@contacts_store')->name('contacts.store');
-    Route::get('/services/{id}', 'front\homeController@services_show')->name('my_services.show');
+    Route::get('/post/{id}', 'front\homeController@services_show')->name('my_services.show');
     Route::get('/services', 'front\homeController@services_index')->name('my_services.index');
 
-    Route::get('/projects/{id}', 'front\homeController@projects_show')->name('my_projects.show');
-    Route::get('/projects', 'front\homeController@projects_index')->name('my_projects.index');
-    Route::get('/plans/{id}', 'front\homeController@plans_show')->name('my_plans.show');
+    Route::get('/products/{id}', 'front\homeController@projects_show')->name('my_projects.show');
+    Route::get('/products', 'front\homeController@projects_index')->name('my_projects.index');
+    Route::get('/blog/{id}', 'front\homeController@plans_show')->name('my_plans.show');
     Route::get('/posts', 'front\homeController@posts_index')->name('post.index');
 
     Route::get('/migrate', function() {
@@ -33,10 +33,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
       return '<h1>Cache facade value cleared</h1>';
   });
 
-    
+
 
  Route::get('terms', function() {
-    
+
       return view("front.terms");
   })->name("terms");
 //

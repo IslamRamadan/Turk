@@ -33,22 +33,23 @@
 
         <div class="form-group">
             <label>@lang('site.title_ar')</label>
-            <input type="text" name="title_ar" class="form-control" value="">
+            <input type="text" name="title_ar" class="form-control" value="{{old('title_ar')}}">
         </div>
 
         <div class="form-group">
             <label>@lang('site.title_en')</label>
-            <input type="text" name="title_en" class="form-control" value="">
+            <input type="text" name="title_en" class="form-control" value="{{old('title_en')}}">
         </div>
 
         <div class="form-group">
             <label>@lang('site.content_ar')</label>
-            <input type="text" name="content_ar" class="form-control" value="">
+            <textarea type="text" name="content_ar" class="form-control" rows="10">{{old('content_ar')}}</textarea>
         </div>
 
         <div class="form-group">
             <label>@lang('site.content_en')</label>
-            <input type="text" name="content_en" class="form-control" value="">
+            <textarea type="text" name="content_en" class="form-control" rows="10">{{old('content_en')}}
+            </textarea>
         </div>
 
 
@@ -82,4 +83,11 @@
 
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'content_ar' );
+    CKEDITOR.replace( 'content_en' );
+</script>
 @endsection

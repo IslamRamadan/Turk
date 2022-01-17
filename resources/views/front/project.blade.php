@@ -3,7 +3,7 @@
 @extends('layouts.front.front')
 @section('title')
 
-    @lang('site.projects')
+    @lang('site.all_products')
 
 @endsection
 @section('content')
@@ -48,10 +48,11 @@
                     <div class="d-flex justify-content-between align-items-center">
                                     <h5>Styrofoam Box Products
                                     </h5>
-
+                                <a href="{{route('my_projects.index')}}">
                                     <h6>
                                         More &nbsp; &nbsp; <i class="fas fa-arrow-right text-light"></i>
                                     </h6>
+                                </a>
 
                     </div>
                     </div>
@@ -70,9 +71,11 @@
                                     <h5>Styrofoam Box Products
                                     </h5>
 
-                                    <h6>
-                                        More &nbsp; &nbsp; <i class="fas fa-arrow-right text-light"></i>
-                                    </h6>
+                                    <a href="{{route('my_projects.index')}}">
+                                        <h6>
+                                            More &nbsp; &nbsp; <i class="fas fa-arrow-right text-light"></i>
+                                        </h6>
+                                    </a>
 
                     </div>
                     </div>

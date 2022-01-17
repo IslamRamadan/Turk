@@ -7,6 +7,7 @@ use App\Models\Contact;
 use Illuminate\Http\Request;
 
 use App\Models\Setting;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -37,7 +38,7 @@ class settingController extends Controller
     }
 
     /**
-    
+
      *
      * @return \Illuminate\Http\Response
      */
@@ -58,7 +59,7 @@ class settingController extends Controller
     public function update_statistics(Request $request)
     {
  //dd($request->name);
- 
+
 $record = Statistic::first();
 
 //dd($request->all());
@@ -108,17 +109,17 @@ if($Statistic){
             'insta_link' => '',
             'yt_link' => '',
             'status' => '',
-            //'name' => 'required',
-            //'name_en' => 'required',
-           // 'logo' => 'mimes:jpg,jpeg,png',
+            'name' => 'required',
+            'name_en' => 'required',
+           'logo' => 'mimes:jpg,jpeg,png',
 
 
 
         ]);
 
 
- 
-      
+
+
 
 
         if ($validator->fails()) {
@@ -127,7 +128,7 @@ if($Statistic){
         }
       //  dd(json_encode($request->all())) ;
 
-        //upload file logo 
+        //upload file logo
      if($request->img  ){
      $img =  $request->img ;
       //add new name for img
@@ -143,15 +144,41 @@ if($Statistic){
        $request->merge(['logo' => $new]);
 
      }
+     $setting = Setting::first();
 
-        $setting = Setting::first();
+     if ($request->hasfile('logo')) {
+        // $images .= 'yes';
+
+        $image = $request->file('logo');
+        $original_name = strtolower(trim($image->getClientOriginalName()));
+        $file_name = time() . rand(100, 999) . $original_name;
+        $path = 'uploads/logos/images/';
+
+        if (!Storage::exists($path)) {
+            Storage::disk('public')->makeDirectory($path);
+        }
+
+//            return (storage_path('app/public/'.$cat->image_url));
+
+        if($setting->logo != null){
+            if(file_exists(storage_path('app/public/'.$setting->logo)))
+            {
+                unlink(storage_path('app/public/'.$setting->logo));
+            }
+        }
+
+        $setting->logo = $image->storeAs($path, $file_name, 'public');
+        $setting->save();
+
+    }
+
 
 
         if( $setting){
 			request()->fullUrlWithQuery(['token ' => null]);
          // dd( $request->query() );
-            $update= $setting->update($request->except(["2","img"]));
-          
+            $update= $setting->update($request->except(["2","logo"]));
+
 
                  if($update){
 

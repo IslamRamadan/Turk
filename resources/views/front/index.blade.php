@@ -61,7 +61,7 @@
                         <p>
                             Dry ice is the name given to the solid state of carbon dioxide. found in Earth's atmosphere
                         </p>
-                        <a href="" class="hide-link">
+                        <a href="{{route('my_projects.index')}}" class="hide-link">
                             <p>More &nbsp; <i class="fas fa-arrow-right text-light"></i></p>
                         </a>
 
@@ -80,7 +80,7 @@
                         <p>
                             Dry ice is the name given to the solid state of carbon dioxide. found in Earth's atmosphere
                         </p>
-                        <a href="" class="hide-link">
+                        <a href="{{route('my_projects.index')}}" class="hide-link">
                             <p>More &nbsp; <i class="fas fa-arrow-right text-light"></i></p>
                         </a>
 
@@ -99,7 +99,7 @@
                         <p>
                             Dry ice is the name given to the solid state of carbon dioxide. found in Earth's atmosphere
                         </p>
-                        <a href="" class="hide-link">
+                        <a href="{{route('my_projects.index')}}" class="hide-link">
                             <p>More &nbsp; <i class="fas fa-arrow-right text-light"></i></p>
                         </a>
 
@@ -118,7 +118,7 @@
                         <p>
                             Dry ice is the name given to the solid state of carbon dioxide. found in Earth's atmosphere
                         </p>
-                        <a href="" class="hide-link">
+                        <a href="{{route('my_projects.index')}}" class="hide-link">
                             <p>More &nbsp; <i class="fas fa-arrow-right text-light"></i></p>
                         </a>
 
@@ -208,8 +208,8 @@
                         <div class="" style="position: relative">
                             <img src="{{url('front/img/7.webp')}}" alt="" class="w-100">
                             <div class="text-center">
-                                <button class="btn btn-primary m-5">More &nbsp; &nbsp; <i class="fas fa-arrow-right text-light"></i>
-                                </button>
+                                <a href="{{route('my_projects.index')}}" class="btn btn-primary m-5">More &nbsp; &nbsp; <i class="fas fa-arrow-right text-light"></i>
+                                </a>
                                      </div>
 
                         </div>
@@ -219,8 +219,8 @@
                         <div class="" style="position: relative">
                             <img src="{{url('front/img/8.webp')}}" alt="" class="w-100">
                             <div class="text-center">
-                                <button class="btn btn-primary m-5">More &nbsp; &nbsp; <i class="fas fa-arrow-right text-light"></i>
-                                </button>
+                                <a href="{{route('my_projects.index')}}" class="btn btn-primary m-5">More &nbsp; &nbsp; <i class="fas fa-arrow-right text-light"></i>
+                                </a>
                                      </div>
 
 

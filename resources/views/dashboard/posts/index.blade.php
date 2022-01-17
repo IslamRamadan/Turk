@@ -41,8 +41,8 @@
 
                     <th class="text-center">@lang('site.title_en')</th>
                     <th class="text-center">@lang('site.title_ar')</th>
-                    <th class="text-center">@lang('site.content_en')</th>
-                    <th class="text-center">@lang('site.content_ar')</th>
+                    {{-- <th class="text-center">@lang('site.content_en')</th>
+                    <th class="text-center">@lang('site.content_ar')</th> --}}
                     <th class="text-center">@lang('site.image')</th>
 
                     <th class="text-center">@lang('site.Procedures')</th>
@@ -58,8 +58,8 @@
                         <td class="text-center">{{$post->title_en}}</td>
 
                         <td class="text-center">{{$post->title_ar}}</td>
-                        <td class="text-center">{{$post->content_en}}</td>
-                        <td class="text-center">{{$post->content_ar}}</td>
+                        {{-- <td class="text-center">{{$post->content_en}}</td> --}}
+                        {{-- <td class="text-center">{{$post->content_ar}}</td> --}}
                         <td class="text-center"><img src="{{ asset($post->img) }}" alt="" width="90px" height="70px">  </td>
 
 
