@@ -122,6 +122,9 @@
 }
 
 @media (min-width: 0px) and (max-width: 570px) {
+    .cust-hght {
+        height: 40vh;
+    }
     .news-hr .news-post-hr .post-thumb {
         flex-basis: 100%;
     }
