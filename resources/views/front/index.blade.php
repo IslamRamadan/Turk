@@ -56,7 +56,7 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6 hvr">
                 <div class="" style="position: relative">
-                    <img src="{{url('/storage',$item->img)}}" alt="" class="w-100">
+                    <img src="{{url('/storage/',$item->img)}}" alt="" class="w-100">
                     <div class="img-div" >
                         <h5>{!! $item['title_'.app()->getLocale()] !!}</h5>
                         <h6>{!! $item['name_'.app()->getLocale()] !!}</h6>
