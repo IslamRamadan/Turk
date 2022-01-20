@@ -31,6 +31,14 @@
         {{ csrf_field() }}
 
         <div class="form-group">
+            <input type="checkbox" class="form-check-input" name="appearance" value="1" id="exampleCheck1"
+            @if ($product->appearance == 1)  {{ 'checked' }} @endif
+            >
+            <label class="form-check-label" for="exampleCheck1">@lang('site.appear')</label>
+          </div>
+
+
+        <div class="form-group">
             <label>@lang('site.title_ar')</label>
             <input type="text" name="title_ar" class="form-control" value="{{$product->title_ar}}">
         </div>
