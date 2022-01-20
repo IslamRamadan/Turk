@@ -24,7 +24,7 @@
             <div class="col-lg-6">
                 <article class="news-post-hr">
                     <div class="row">
-                    <div class="col-md-12 col-12 post-thumb">
+                    <div class="col-md-12 col-12 post-thumb p-0">
                         <a href="{{route('post.show',$item->id)}}">
                             <img src="{{url($item->img)}}" alt="post-image" class="img-fluid">
                         </a>
