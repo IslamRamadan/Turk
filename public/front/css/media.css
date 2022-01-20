@@ -115,6 +115,12 @@
   ##Screen = 320px to 479px
 */
 
+@media (min-width: 0px) and (max-width: 375px) {
+    .cust-hght {
+        height: 40vh;
+    }
+}
+
 @media (min-width: 0px) and (max-width: 570px) {
     .news-hr .news-post-hr .post-thumb {
         flex-basis: 100%;
