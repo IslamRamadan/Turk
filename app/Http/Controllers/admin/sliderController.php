@@ -28,7 +28,7 @@ class SliderController extends Controller
         if ($request->search) {
             $q->where('text', 'LIKE', '%' . $request->search . '%');
         }
-       
+
     })->paginate(10);
 
         return view("/dashboard/sliders/index",["categories"=>  $categories ]);
@@ -52,23 +52,23 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $messeges = [
 
-           
+
             'photo.required'=>"صورة السليدر مطلوبة",
             'photo.mimes'=>" يجب ان تكون الصورة jpg او jpeg او png  ",
             'photo.max'=>" الحد الاقصي للصورة 4 ميجا ",
             "text.required"=>"اسم السليدر مطلوب"
-            
+
 
            ];
 
 
         $validator =  Validator::make($request->all(), [
 
-          
-            'photo' => 'required|mimes:jpg,jpeg,png|max:4100',
+
+            'photo' => 'required|mimes:jpg,webp,jpeg,png|max:4100',
             "text"=>  " required"
 
         ], $messeges);
@@ -83,11 +83,11 @@ class SliderController extends Controller
         $img =  $request->photo ;
         //add new name for img
         $new_name_img = time().uniqid().".".$img->getClientOriginalExtension();
-  
+
         //move img to folder
        $move = $img->move(public_path("upload/sliders"), $new_name_img);
 
-  
+
          $new = "upload/sliders/".$new_name_img ;
          $request->merge(['img' => $new]);
 
@@ -141,25 +141,25 @@ class SliderController extends Controller
 
         $messeges = [
 
-           
+
             'photo.mimes'=>" يجب ان تكون الصورة jpg او jpeg او png  ",
             'photo.max'=>" الحد الاقصي للصورة 4 ميجا ",
             "text.required"=>"اسم السليدر مطلوب"
-            
+
 
            ];
 
 
         $validator =  Validator::make($request->all(), [
 
-          
-            'photo' => 'mimes:jpg,jpeg,png|max:4100',
+
+            'photo' => 'mimes:jpg,jpeg,webp,png|max:4100',
             "text"=>  " required"
 
         ], $messeges);
 
 
-       
+
 
 
 
@@ -172,13 +172,13 @@ class SliderController extends Controller
             $img =  $request->photo ;
             //add new name for img
             $new_name_img = time().uniqid().".".$img->getClientOriginalExtension();
-      
+
             //move img to folder
            $move = $img->move(public_path("upload/sliders"), $new_name_img);
           // dd(public_path("upload"));
           // $move2= move_uploaded_file( $_FILES["logo"]["tmp_name"],public_path("upload")."/".$new_name_img) ;
           // dd($move2);
-      
+
              $new = "upload/sliders/".$new_name_img ;
              $request->merge(['img' => $new]);
         }
@@ -206,9 +206,9 @@ class SliderController extends Controller
     {
 
       $category= Slider::findOrFail($id);
-  
 
-   
+
+
       $category->delete();
      // session()->flash('success', __('site.deleted_successfully'));
 
