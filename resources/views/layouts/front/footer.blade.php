@@ -3,7 +3,12 @@
         <br><br>
         <div class="row">
             <div class="col-12">
-                <h2>CARBON </h2>
+                <h2> @if (app()->getLocale() == 'en')
+                    {{ $my_setting->name_en }}
+                @else
+                    {{ $my_setting->name }}
+                @endif
+</h2>
                 <p>@lang('site.home_address')</p>
             </div>
             <div class="col-md-9">
@@ -11,7 +16,7 @@
                 <a href="{{route('home.index')}}">@lang('site.home')</a>
                 <a href="{{route('about.index')}}">@lang('site.about_us')</a>
                 <a href="{{route('contacts.index')}}">@lang('site.contact_us')</a>
-                <a href="{{route('terms')}}">@lang('site.terms_and_condition')</a>
+                {{-- <a href="{{route('terms')}}">@lang('site.terms_and_condition')</a> --}}
                 {{--<a href="html/contect.html">@lang('site.')FAQ</a>--}}
                 {{--<a href="html/contect.html">@lang('site.')PRIVACY</a>--}}
 

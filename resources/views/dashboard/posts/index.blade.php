@@ -66,6 +66,7 @@
                         <td class="text-center">
 
                             <a href="{{url(route("posts.edit",$post->id)) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('site.edit')</a>
+                            <a href="{{url(route("post_galaries.index",$post->id)) }}" class="btn btn-success btn-sm"><i class="fa fa-edit"></i> @lang('site.imgs')</a>
 
 
                             <form action="{{url(route("posts.destroy",$post->id)) }}" method="post" style="display: inline-block">

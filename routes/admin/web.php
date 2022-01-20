@@ -57,14 +57,32 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
                 Route::resource('/users', 'userController');
 
                 //islam
-
-                Route::resource('/works', 'WorkController');
-                Route::resource('/how_works', 'howWorkController');
-                Route::resource('/why_works', 'whyWorkController');
+                Route::resource('basic_categories', 'BasicCategoryController');
+                // Route::resource('/works', 'WorkController');
+                // Route::resource('/how_works', 'howWorkController');
+                // Route::resource('/why_works', 'whyWorkController');
                 Route::resource('/services', 'ServiceController');
+                Route::resource('/categories', 'CategoryController');
                 Route::resource('/posts', 'postController');
-                Route::resource('/projects', 'ProjectController');
-                Route::resource('/plans', 'PlanController');
+                // Route::resource('/projects', 'ProjectController');
+                // Route::resource('/plans', 'PlanController');
+                Route::resource('products', 'ProductController');
+                Route::post('custom_products/update/{id}', 'ProductController@updateProduct')->name('products.update.product');
+                Route::post('custom_services/update/{id}', 'ServiceController@updateService')->name('services.update.service');
+                Route::post('custom_categories/update/{id}', 'CategoryController@updateCategory')->name('categories.update.category');
+                Route::get('/post_galaries/{id}', 'postGalaryController@index')->name("post_galaries.index");
+                Route::post('/post_galaries/store/{id}', 'postGalaryController@store')->name("post_galaries.store");
+                Route::delete('/post_galaries/destroy/{id}', 'postGalaryController@destroy')->name("post_galaries.destroy");
+                Route::get('/service_galaries/{id}', 'serviceGalaryController@index')->name("service_galaries.index");
+                Route::post('/service_galaries/store/{id}', 'serviceGalaryController@store')->name("service_galaries.store");
+                Route::delete('/service_galaries/destroy/{id}', 'serviceGalaryController@destroy')->name("service_galaries.destroy");
+                Route::get('/category_galaries/{id}', 'categoryGalaryController@index')->name("category_galaries.index");
+                Route::post('/category_galaries/store/{id}', 'categoryGalaryController@store')->name("category_galaries.store");
+                Route::delete('/category_galaries/destroy/{id}', 'categoryGalaryController@destroy')->name("category_galaries.destroy");
+                Route::get('basic_categories/destroy/{id}', 'BasicCategoryController@destroy');
+                Route::post('custom_basic_categories/update/{id}', 'BasicCategoryController@updateBasicCategory')->name('basic_categories.update.basic_category');
+
+                Route::post('/add_section', 'ProductController@add_section')->name("add.section");
 
 
                 //islam

@@ -1,136 +1,146 @@
-
 @extends('layouts.front.front')
 @section('title')
 
-    @lang('site.post')
+
+    @lang('site.blog')
 
 @endsection
 @section('content')
 
+    <!-----start carousel --->
+
 <div  class=" relative1 " >
     <div class="abs w-100">
-        <h4 class="custom-h4">Blog</h4>
-        <h1>Blog</h1>
+        <h4 class="custom-h4">@lang('site.blog')</h4>
+        <h1>{!!$post['title_'.app()->getLocale()]!!}</h1>
 
     </div>
 </div>
 
-<section class="news-hr section mb-0">
+<section class="news section">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-title">
-                    <h3>My mall News</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, enim.</p>
-                </div>
+        <div class="row mt-30">
+            <div class="col-12 mx-auto">
+                <div class="block">
+                    <!-- Article -->
+                    <article class="blog-post single">
+                        <div class="post-thumb">
+                            <img src="{{url('front/img/20.webp')}}" alt="post-image" class="img-fluid" style="width: 100%;">
+                        </div>
+                        <div class="post-content">
+                            <div class="date">
+                                <h4>20<span>May</span></h4>
+                            </div>
+                            <div class="post-title">
+                                <h3>{!!$post['title_'.app()->getLocale()]!!}</h3>
+                            </div>
+
+                            <div class="post-details">
+                                {!!$post['content_'.app()->getLocale()]!!}
+                            </div>
+{{--
+<div class="container-fluid  p-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-12 mb-3"  >
+            <div class="" >
+                <img src="{{url('front/img/24.webp')}}" class="w-100 cust-hght" alt="">
             </div>
         </div>
-        <div class="row no-gutters">
-            <div class="col-lg-6">
-                <article class="news-post-hr">
-                    <div class="post-thumb">
-                        <a href="news-single.html">
-                            <img src="{{url('front/img/20.webp')}}" alt="post-image" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="post-contents border-top">
-                        <div class="post-title">
-                            <h6><a href="news-single.html">Default title here</a></h6>
-                        </div>
-                        <div class="post-exerpts">
-                            <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed doeiuse tempor incididunt ut
-                            </p>
+        <div class="col-lg-8 col-md-6 col-12 mb-3"  >
+            <h4>TRAY 160</h4>
+            <p>Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid  p-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-12 mb-3"  >
+            <div class="" >
+                <img src="{{url('front/img/24.webp')}}" class="w-100 cust-hght" alt="">
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-6 col-12 mb-3"  >
+            <h4>TRAY 160</h4>
+            <p>Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid  p-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-12 mb-3"  >
+            <div class="" >
+                <img src="{{url('front/img/24.webp')}}" class="w-100 cust-hght" alt="">
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-6 col-12 mb-3"  >
+            <h4>TRAY 160</h4>
+            <p>Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                Body and cover are made of one piece (monoblock) rotomoulded polyethylene.
+                </p>
+        </div>
+    </div>
+</div> --}}
+
+
+<div class="container-fluid  p-5">
+    <div class="row justify-content-center">
+        @foreach ($post_img as $item)
+
+        <div class="col-lg-4 col-md-6 col-12 mb-3"  >
+            <div class="" style="background-color: rgb(35, 159, 168)">
+            {{-- <h5 class="text-center pt-3">Olive Polyethylene BAC / SANDIK</h5> --}}
+            <img src="{{url($item->img)}}" class="w-100 cust-hght" alt="">
+        </div>
+
+        </div>
+
+        @endforeach
+
+
+        {{-- <div class="col-lg-4 col-md-6 col-12 mb-3"  >
+            <div class="" style="background-color: rgb(15, 128, 99)">
+            <h5 class="text-center pt-3">Olive Polyethylene BAC / SANDIK</h5>
+            <img src="{{url('front/img/22.webp')}}" class="w-100 cust-hght" alt="">
+        </div>
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 mb-3"  >
+            <div class="" style="background-color: rgb(32, 134, 194)">
+            <h5 class="text-center pt-3">Olive Polyethylene BAC / SANDIK</h5>
+            <img src="{{url('front/img/23.webp')}}" class="w-100 cust-hght" alt="">
+        </div> --}}
+
+        </div>
+
+    </div>
+</div>
+
                         </div>
 
-                        <div class="date">
-                            <h4>20<span>May</span></h4>
-                        </div>
-                        <div class="more">
-                            <a href="news-single.html">Show more</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="col-lg-6">
-                <article class="news-post-hr">
-                    <div class="post-thumb">
-                        <a href="news-single.html">
-                            <img src="{{url('front/img/20.webp')}}" alt="post-image" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="post-contents border-top">
-                        <div class="post-title">
-                            <h6><a href="news-single.html">Default title here</a></h6>
-                        </div>
-                        <div class="post-exerpts">
-                            <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed doeiuse tempor incididunt ut
-                            </p>
-                        </div>
 
-                        <div class="date">
-                            <h4>20<span>May</span></h4>
-                        </div>
-                        <div class="more">
-                            <a href="news-single.html">Show more</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="col-lg-6">
-                <article class="news-post-hr">
-                    <div class="post-thumb">
-                        <a href="news-single.html">
-                            <img src="{{url('front/img/20.webp')}}" alt="post-image" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="post-contents">
-                        <div class="post-title">
-                            <h6><a href="news-single.html">Default title here</a></h6>
-                        </div>
-                        <div class="post-exerpts">
-                            <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed doeiuse tempor incididunt ut
-                            </p>
-                        </div>
+                    </article>
+                    <!-- Comment Section -->
 
-                        <div class="date">
-                            <h4>20<span>May</span></h4>
-                        </div>
-                        <div class="more">
-                            <a href="news-single.html">Show more</a>
-                        </div>
-                    </div>
-                </article>
+                </div>
             </div>
-            <div class="col-lg-6">
-                <article class="news-post-hr">
-                    <div class="post-thumb">
-                        <a href="news-single.html">
-                            <img src="{{url('front/img/20.webp')}}" alt="post-image" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="post-contents">
-                        <div class="post-title">
-                            <h6><a href="news-single.html">Default title here</a></h6>
-                        </div>
-                        <div class="post-exerpts">
-                            <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed doeiuse tempor incididunt ut
-                            </p>
-                        </div>
 
-                        <div class="date">
-                            <h4>20<span>May</span></h4>
-                        </div>
-                        <div class="more">
-                            <a href="news-single.html">Show more</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
         </div>
     </div>
 </section>
 
-<!--====  End of News  ====-->
+
 
 
 @endsection

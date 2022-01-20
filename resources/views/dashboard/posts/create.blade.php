@@ -42,6 +42,16 @@
         </div>
 
         <div class="form-group">
+            <label>@lang('site.brief_ar')</label>
+            <textarea type="text" name="brief_ar" class="form-control" rows="10">{{old('brief_ar')}}</textarea>
+        </div>
+
+        <div class="form-group">
+            <label>@lang('site.brief_en')</label>
+            <textarea type="text" name="brief_en" class="form-control" rows="10">{{old('brief_en')}}
+            </textarea>
+        </div>
+        <div class="form-group">
             <label>@lang('site.content_ar')</label>
             <textarea type="text" name="content_ar" class="form-control" rows="10">{{old('content_ar')}}</textarea>
         </div>
@@ -56,6 +66,11 @@
         <div class="form-group">
             <label>@lang('site.image')</label>
             <input type="file" name="img" class="form-control" value="">
+        </div>
+
+        <div class="form-group" >
+            <label> @lang('site.add_imgs')</label>
+            <input type="file" name="photo[]" multiple class="form-control"  required>
         </div>
 
 

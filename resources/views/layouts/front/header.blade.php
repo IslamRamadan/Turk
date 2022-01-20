@@ -22,6 +22,8 @@
 
 
 @endif
+@include('sweetalert::alert')
+
 <div class="container-fluid pad-0 bg-main  ">
     <div class="container  ">
         <div class="float-left">
@@ -108,8 +110,43 @@
                             {{--</div>--}}
                         {{--</li>--}}
 
-                        <li class="nav-item "><a class="nav-link " href="{{route('my_projects.show',67)}}" >@lang('site.all_products')</a></li>
-                        <li class="nav-item "><a class="nav-link " href="{{route('my_plans.show',66)}}" >@lang('site.blog')</a></li>
+
+                        @foreach (\App\Models\Category::all() as $b)
+                        <li class="nav-item relative ul1"><a class="nav-link "
+                                href="{{route('category.show',$b->id)}}">
+                                @if (app()->getLocale() == 'en')
+                                    {{ $b->name_en }}
+                                @else
+                                    {{ $b->name_ar }}
+                                @endif
+
+                            </a>
+
+                            <div class=" ul2  bg-w  text-dir ">
+
+
+                                @if (\App\Models\Service::where('category_id', $b->id)->count() > 0)
+                                    @foreach (\App\Models\Service::where('category_id', $b->id)->get() as $c)
+                                        <a class="nav-link " href="{{route('service.show',$c->id)}}">
+                                            @if (app()->getLocale() == 'en')
+                                                {{ $c->name_en }}
+                                            @else
+                                                {{ $c->name_ar }}
+                                            @endif
+                                        </a>
+                                        {{-- <hr class="mr-0"> --}}
+                                    @endforeach
+                                @endif
+
+                            </div>
+
+                        </li>
+                    @endforeach
+
+
+
+                        <li class="nav-item "><a class="nav-link " href="{{route('all_products')}}" >{!! $my_setting['product_'.app()->getLocale()] !!}</a></li>
+                        <li class="nav-item "><a class="nav-link " href="{{route('all_posts')}}" >{!! $my_setting['blog_'.app()->getLocale()] !!}</a></li>
                         <li class="nav-item "><a class="nav-link " href="{{route('about.index')}}" >@lang('site.about_us')</a></li>
                         {{-- <li class="nav-item">
                             <div class="dropdown nav-link" >
@@ -131,6 +168,9 @@
                                 </div>
                             </div>
                         </li> --}}
+                        {{-- @foreach (App\Models\Service::select('id','title_en','title_ar')->get() as $item)
+                        <li class="nav-item"><a class="nav-link " href="{{route('service.show',$item->id)}}" >{!!$item['title_'.app()->getLocale()]!!}</a></li>
+                        @endforeach --}}
 
                         <li class="nav-item"><a class="nav-link " href="{{route('contacts.index')}}" >@lang('site.contact_us')</a></li>
 

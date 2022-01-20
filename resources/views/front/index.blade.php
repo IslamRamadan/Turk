@@ -41,10 +41,10 @@
     <div class="container text-center center-p">
         <br>
 
-        <h1>To your business
+        <h1>@lang('site.view_more')
 
         </h1>
-        <h1>we produce special solutions
+        <h1>@lang('site.p_s')
 
         </h1><br>
 
@@ -52,17 +52,21 @@
     <div  class="container-fluid" >
 
         <div class="row">
+            @foreach ($services as $item)
+
             <div class="col-lg-3 col-md-6 col-sm-6 hvr">
                 <div class="" style="position: relative">
-                    <img src="{{url('front/img/4.webp')}}" alt="" class="w-100">
+                    <img src="{{url('/storage',$item->img)}}" alt="" class="w-100">
                     <div class="img-div" >
-                        <h5>Dry ice</h5>
-                        <h6>Dry ice</h6>
-                        <p>
-                            Dry ice is the name given to the solid state of carbon dioxide. found in Earth's atmosphere
-                        </p>
-                        <a href="{{route('my_projects.index')}}" class="hide-link">
-                            <p>More &nbsp;  @if(Lang::locale()=='ar')
+                        <h5>{!! $item['title_'.app()->getLocale()] !!}</h5>
+                        <h6>{!! $item['name_'.app()->getLocale()] !!}</h6>
+                          @php
+                                $pieces = explode(" ", $item['content_'.app()->getLocale()]);
+                                $content = implode(" ", array_splice($pieces, 0, 10));
+                            @endphp
+                        <p>{!! $content !!}</p>
+                        <a href="{{route('service.show',$item->id)}}" class="hide-link">
+                            <p>@lang('site.view_more') &nbsp;  @if(Lang::locale()=='ar')
                                 <i class="fas fa-arrow-right text-light fa-flip-horizontal"></i>
                                 @else
                                 <i class="fas fa-arrow-right text-light "></i>
@@ -76,7 +80,9 @@
                 </div>
 
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 hvr">
+            @endforeach
+
+            {{-- <div class="col-lg-3 col-md-6 col-sm-6 hvr">
                 <div class="" style="position: relative">
                     <img src="{{url('front/img/3.webp')}}" alt="" class="w-100">
                     <div class="img-div" >
@@ -148,7 +154,7 @@
 
                 </div>
 
-            </div>
+            </div> --}}
 
 
         </div>
@@ -156,12 +162,11 @@
     <div class="container text-center center-p">
         <br>
 
-        <h4 class="mb-4">DRY ICE TECHNOLOGIES:</h4>
-        <h1>To your business</h1>
-        <h1>we produce special solutions
+        <h4 class="mb-4">@lang('site.dry_ice')</h4>
+        <h1>@lang('site.to_buss')</h1>
+        <h1>@lang('site.p_s')
         </h1>
-        <p>Carbon; meets your dry ice and dry ice cleaning service needs on time and saves you and your business time.
-        </p>
+        <p>@lang('site.carb')</p>
         <br>
 
     </div>
@@ -169,40 +174,32 @@
     <div  class="container-fluid" >
 
         <div class="row">
+            @foreach ($categories as $item)
+
             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                <a href="{{route('category.show',$item->id)}}">
                 <div class="" style="position: relative">
-                    <img src="{{url('front/img/5.webp')}}" alt="" class="w-100 bright-50">
+                    <img src="{{url('storage/'.$item->img)}}" alt="" class="w-100 bright-50">
                     <div class="img-div1" >
-                        <h2>Dry ice</h2>
+                        <h2>{!! $item['name_'.app()->getLocale()] !!}</h2>
 
 
 
                         </div>
                     <div class="img-div2" >
-                        <h5>Dry Ice Products</h5>
+                        <h5>{!! $item['title_'.app()->getLocale()] !!}</h5>
 
                         </div>
 
                 </div>
+               </a>
 
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                <div class="" style="position: relative">
-                    <img src="{{url('front/img/6.webp')}}" alt="" class="w-100 bright-50">
-                    <div class="img-div1" >
-                        <h2>Dry Ice Technologies</h2>
+
+            @endforeach
 
 
 
-                        </div>
-                    <div class="img-div2" >
-                        <h5>Dry Ice Cleaning System</h5>
-
-                        </div>
-
-                </div>
-
-            </div>
 
 
 
@@ -214,7 +211,7 @@
 
 <div class="component">
     <blockquote class="callout quote EN">
-       <h2> We produce customized solutions for your business
+       <h2> @lang('site.cus')
        </h2>
        </blockquote>
     </div>
@@ -225,11 +222,13 @@
             <div  class="container-fluid" >
 
                 <div class="row">
+                    @foreach ($products as $item)
+
                     <div class="col-lg-6 col-md-6 col-sm-12 ">
                         <div class="" style="position: relative">
-                            <img src="{{url('front/img/7.webp')}}" alt="" class="w-100">
+                            <img src="{{url('storage/'.$item->img)}}" alt="" class="w-100">
                             <div class="text-center">
-                                <a href="{{route('my_projects.index')}}" class="btn btn-primary m-5">More &nbsp; &nbsp;
+                                <a href="{{route('product.show',$item->id)}}" class="btn btn-primary m-5">@lang('site.view_more') &nbsp; &nbsp;
                                     @if(Lang::locale()=='ar')
                                     <i class="fas fa-arrow-right text-light fa-flip-horizontal"></i>
                                     @else
@@ -242,11 +241,12 @@
                         </div>
 
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 ">
+                    @endforeach
+                    {{-- <div class="col-lg-6 col-md-6 col-sm-12 ">
                         <div class="" style="position: relative">
                             <img src="{{url('front/img/8.webp')}}" alt="" class="w-100">
                             <div class="text-center">
-                                <a href="{{route('my_projects.index')}}" class="btn btn-primary m-5">More &nbsp; &nbsp;
+                                <a href="{{route('product.show')}}" class="btn btn-primary m-5">@lang('site.view_more') &nbsp; &nbsp;
                                     @if(Lang::locale()=='ar')
                                     <i class="fas fa-arrow-right text-light fa-flip-horizontal"></i>
                                     @else
@@ -258,7 +258,7 @@
 
                         </div>
 
-                    </div>
+                    </div> --}}
 
 
 
@@ -268,12 +268,11 @@
 
             <div class="container text-center center-p ">
                 <br>
-                <h4 class="mb-4">DRY ICE PRODUCTS AND SERVICES:</h4>
-                <h1>An environmentally friendly and fast cleaning system</h1>
-                <p>Dry ice cleaning is the cleaning system of today and tomorrow. This system, which is not harmful to the environment and nature, adds time and profit value to your business.
-                </p>
+                <h4 class="mb-4">@lang('site.dry_i')</h4>
+                <h1>@lang('site.dry_i2')</h1>
+                <p>@lang('site.dry_i3')</p>
                 <br>
-                <button class="btn btn-one">References
+                <button class="btn btn-one">@lang('site.references')
                 </button>
                 <br>
             </div>
@@ -281,8 +280,7 @@
             <div class="container-fluid  ">
                 <br>
 
-                <h2 class="text-center">In Turkey dozens of businesses rely on us
-                    <hr>
+                <h2 class="text-center">@lang('site.dry_i4')<hr>
                 </h2>
                 <br>
                 <div class="row align-items-center">
@@ -354,7 +352,7 @@
 
                 <div class="component">
                     <blockquote class="callout quote EN">
-                       <h2> We serve all of Turkey
+                       <h2>@lang('site.dry_i5')
                        </h2>
                        </blockquote>
                     </div>
@@ -365,15 +363,15 @@
     <div class="container-fluid">
         <br>
 
-        <h4 class="custom-h4" >OUR DRY ICE SERVICE AND SUPPLY CHANNELS:
+        <h4 class="custom-h4" >@lang('site.dry_i6')
         </h4>
 
         <div class="row">
 
 
             <div class="col-md-3 col-12 align-self-center">
-                <h3 class="mb-5">We serve all of Turkey</h3>
-                <p>It is important for us to provide solutions to the needs of our customers. We carry quality and service all over our country. We aim for faster solutions for you.</p>
+                <h3 class="mb-5">@lang('site.dry_i5')</h3>
+                <p>@lang('site.dry_i7')</p>
             </div>
             <div class="col-md-9 col-12">
                 <img src="{{url('front/img/17.webp')}}" alt="" class="w-100">
@@ -385,48 +383,56 @@
     <div class="container-fluid contact-container">
         <div class="row justify-content-between">
             <div class="col-lg-4 col-md-6 col-12 mt-sm-3">
-                <h1>Let's answer your questions!</h1>
-                <h1>Let's determine your need together!
+                <h1>@lang('site.dry_i8')</h1>
+                <h1>@lang('site.dry_i9')
                 </h1>
                 <br>
                 <br>
-                <p>Please contact us for dry ice cleaning, use of dry ice for food, dry ice and cold chain processes and styrofoam products you need.</p>
+                <p>@lang('site.dry_i10')</p>
             </div>
             <div class="col-lg-4 col-md-6 col-12 cus-form">
+                {!! Form::model("", ['route' => ['contacts.store'],
+                "method"=>"post"
+
+                ])!!}
+              {{ csrf_field() }}
                 <div class="form">
                     <div class="form-group row">
                         <div class="col-sm-12">
-                            <input type="text"  class="form-control" name="name"   placeholder="@lang('site.name')" >
+                            <input type="text"  class="form-control" name="name"   placeholder="@lang('site.name')" value="{{old('name')}}">
                         </div>
                     </div>
                     <br>
                     <div class="form-group row">
                         <div class="col-sm-12">
-                            <input type="text"  class="form-control" name="phone"   placeholder="@lang('site.phone')" >
+                            <input type="text"  class="form-control" name="phone"   placeholder="@lang('site.phone')" value="{{old('phone')}}">
                         </div>
                     </div>
                     <br>
                     <div class="form-group row">
                         </label>
                         <div class="col-sm-12">
-                            <input type="text"  class="form-control" name="email"   placeholder="@lang('site.email')" >
+                            <input type="text"  class="form-control" name="email"   placeholder="@lang('site.email')" value="{{old('email')}}">
                         </div>
                     </div>
                     <br>
                     <div class="form-group row">
                         <div class="col-sm-12">
-                            <textarea  rows="3" name="comment" placeholder="Write message here..."  class="form-control"  ></textarea>
+                            <textarea  rows="3" name="comment" placeholder="Write message here..."  class="form-control"  >{{old('comment')}}</textarea>
                         </div>
                     </div>
                     <br>
                     <div class="form-group row">
                         <div class="col-sm-12 text-center">
-                            <button type="submit" class="btn btn-primary " >submit</button>
+                            <button type="submit" class="btn btn-primary " >@lang('site.submit')</button>
                         </div>
                     </div>
 
                 </div>
+                {!! Form::close() !!}
+
             </div>
+
         </div>
     </div>
 

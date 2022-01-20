@@ -45,13 +45,6 @@ class AppServiceProvider extends ServiceProvider
        $my_setting= Setting::first();
         view()->share(compact('my_setting'));
         ///////////////////////////////////////////////
-        $my_sevices= Service::where('type',1)->get();
-        view()->share(compact('my_sevices'));
 
-        $my_projects= Service::where('type',2)->get();
-        view()->share(compact('my_projects'));
-
-        $my_plans= Service::where('type',3)->get();
-        view()->share(compact('my_plans'));
     }
 }

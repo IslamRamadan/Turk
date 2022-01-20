@@ -20,41 +20,19 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/about', 'front\homeController@about')->name('about.index');
     Route::get('/contacts', 'front\homeController@contacts_index')->name('contacts.index');
     Route::post('/contacts', 'front\homeController@contacts_store')->name('contacts.store');
-    Route::get('/post/{id}', 'front\homeController@services_show')->name('my_services.show');
-    Route::get('/services', 'front\homeController@services_index')->name('my_services.index');
+    Route::get('/post/{id}', 'front\homeController@single_post')->name('post.show');
+    Route::get('/service/{id}', 'front\homeController@service_show')->name('service.show');
+    Route::get('/category/{id}', 'front\homeController@category_show')->name('category.show');
 
-    Route::get('/products/{id}', 'front\homeController@projects_show')->name('my_projects.show');
-    Route::get('/products', 'front\homeController@projects_index')->name('my_projects.index');
-    Route::get('/blog/{id}', 'front\homeController@plans_show')->name('my_plans.show');
+    Route::get('/all_products', 'front\homeController@all_products')->name('all_products');
+    Route::get('/product/{id}', 'front\homeController@single_product')->name('product.show');
+    Route::get('/all_posts', 'front\homeController@all_posts')->name('all_posts');
     Route::get('/posts', 'front\homeController@posts_index')->name('post.index');
 
     Route::get('/migrate', function() {
       $exitCode = Artisan::call('migrate');
       return '<h1>Cache facade value cleared</h1>';
   });
-
-
-
- Route::get('terms', function() {
-
-      return view("front.terms");
-  })->name("terms");
-//
-//Route::get('contact-us', function() {
-//
-//      return view("front.contact");
-//  })->name("contact");
-//
-//Route::get('policy', function() {
-//
-//      return view("front.policy");
-//  })->name("policy");
-
-//
-//Route::get('about', function() {
-//
-//      return view("front.about");
-//  })->name("about");
 
 
 });

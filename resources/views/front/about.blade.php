@@ -11,8 +11,8 @@
 <!-----start carousel --->
 <div  class=" relative1 " >
     <div class="abs w-100">
-        <h4 class="custom-h4">About Us</h4>
-        <h1>10 Years With You...</h1>
+        <h4 class="custom-h4">@lang('site.about_us')</h4>
+        <h1>@lang('site.dry_i17')</h1>
 
     </div>
 </div>
@@ -22,18 +22,8 @@
         <div class="col-md-7 col-12 ">
 
 <br>
-
-<h4 class="custom-h4 mb-3 p-0 mt-3" >WHY DRY ICE CLEANING
-</h4>
-<p>Carbon Dry Ice is excited to share its knowledge and experience in industrial cleaning with its valued customers for nearly 10 years. Our company, which has been serving in the field of Dry Cleaning and Industrial Cleaning since its establishment, has an expert staff; It offers you special solutions for dry ice production, dry ice types, dry ice cleaning and transportation of food with dry ice.
-</p>
-<p>It sells the OLIVO Dry Ice Containers, the world's leading brand, and the Cold Jet Dry ice cleaning machines, the world's leading dry ice cleaning machine.
-</p>
-<p>Although Carbon Dry Ice is a medium-sized enterprise, it has been recognized in the dry ice sector in a short time thanks to its determination to succeed in the quality and the difficulties it has given since its establishment and has never given up on these principles. The unchanging principles of our company have always been quality, service, timely delivery and reasonable prices.</p>
-<p>Carbon Dry Ice, which works with the principle of honesty and quality in service, will continue to serve you today and in the future by thanking you for your close attention and support.
-</p>
-</div>
-        <div class="col-md-4 col-12 ">
+{!! $my_setting['about_app_'.app()->getLocale()] !!}
+        {{-- <div class="col-md-4 col-12 ">
 
 <br>
 
@@ -46,17 +36,17 @@
 <h6><i class="fas fa-arrow-right main-color"></i> &nbsp; Machine Rental</h6>
 
 
-        </div>
+        </div> --}}
     </div>
 </div>
 
 <div class="container text-center center-p col-md-6 col-sm-12">
     <br>
-    <h4 class="mb-4">OUR CUSTOMERS:</h4>
-    <h1>Businesses we work with can be a good answer for your business    </h1>
-    <p>Our references will give you a better idea about us</p>
+    <h4 class="mb-4">@lang('site.dry_i18')</h4>
+    <h1>@lang('site.dry_i19')</h1>
+    <p>@lang('site.dry_i20')</p>
     <br>
-    <button class="btn btn-one">References
+    <button class="btn btn-one">@lang('site.references')
     </button>
     <br>
 </div>
@@ -64,7 +54,7 @@
 <div class="container-fluid mb-3">
     <br>
 
-    <h2 class="text-center">In Turkey dozens of businesses rely on us
+    <h2 class="text-center">@lang('site.dry_i4')
         <hr>
     </h2>
     <br>

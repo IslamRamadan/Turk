@@ -43,13 +43,13 @@
 
 
             <li  class="moha" ><a style="" href="{{route("sliders.index")}}"><i class="fa fa-list"></i> <span> @lang('site.slider') </span></a></li>
-                  <li  class="moha" ><a style="" href="{{route("services.index")}}"><i class="fa fa-list"></i> <span>@lang('site.services')  </span></a></li>
-                  <li  class="moha" ><a style="" href="{{route("projects.index")}}"><i class="fa fa-list"></i> <span>@lang('site.projects')  </span></a></li>
-                  <li  class="moha" ><a style="" href="{{route("posts.index")}}"><i class="fa fa-list"></i> <span>@lang('site.posts')  </span></a></li>
-                  <li  class="moha" ><a style="" href="{{route("plans.index")}}"><i class="fa fa-list"></i> <span>@lang('site.plans')  </span></a></li>
-                  <li  class="moha" ><a style="" href="{{route("works.index")}}"><i class="fa fa-list"></i> <span>@lang('site.work')  </span></a></li>
+            <li  class="moha" ><a style="" href="{{route("categories.index")}}"><i class="fa fa-list"></i> <span>@lang('site.categories')  </span></a></li>
+            <li  class="moha" ><a style="" href="{{route("services.index")}}"><i class="fa fa-list"></i> <span>@lang('site.services')  </span></a></li>
+            <li  class="moha" ><a style="" href="{{route("products.index")}}"><i class="fa fa-list"></i> <span>@lang('site.products')  </span></a></li>
+            <li  class="moha" ><a style="" href="{{route("posts.index")}}"><i class="fa fa-list"></i> <span>@lang('site.posts')  </span></a></li>
+                  {{-- <li  class="moha" ><a style="" href="{{route("works.index")}}"><i class="fa fa-list"></i> <span>@lang('site.work')  </span></a></li>
                   <li  class="moha" ><a style="" href="{{route("how_works.index")}}"><i class="fa fa-list"></i> <span>@lang('site.how_work')  </span></a></li>
-                  <li  class="moha" ><a style="" href="{{route("why_works.index")}}"><i class="fa fa-list"></i> <span>@lang('site.why_work')  </span></a></li>
+                  <li  class="moha" ><a style="" href="{{route("why_works.index")}}"><i class="fa fa-list"></i> <span>@lang('site.why_work')  </span></a></li> --}}
                   <li  class="moha" ><a style="" href="{{route("contact.index")}}"><i class="fa fa-list"></i> <span>@lang('site.contacts_sec')  </span></a></li>
 
                   <li  class="moha" ><a style="" href="{{route("settings.index")}}"><i class="fa fa-list"></i> <span> @lang('site.settings') </span></a></li>

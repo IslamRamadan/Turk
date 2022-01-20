@@ -100,7 +100,7 @@ if($Statistic){
         //dd($request->name);
         $validator =  Validator::make($request->all(), [
 
-            'about_app' => '',
+            'about_app_ar' => '',
             'wats' => '',
             'tw_link' => '',
             'fb_link' => '',

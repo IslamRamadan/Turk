@@ -60,7 +60,7 @@
                         <td class="text-center">{{$service->title_en}}</td>
 
                         <td class="text-center">{{$service->title_ar}}</td>
-                        <td class="text-center"><img src="{{ asset($service->img) }}" alt="" width="90px" height="70px">  </td>
+                        <td class="text-center"><img src="{{ asset('/storage/'.$service->img) }}" alt="" width="90px" height="70px">  </td>
 
                         <td class="text-center">{{$service->content_en}}</td>
                         <td class="text-center">{{$service->content_ar}}</td>
@@ -69,7 +69,9 @@
                         <td class="text-center">
 
                             {{--<a href="{{url(route("works.edit",$service->id)) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('site.edit')</a>--}}
-                            <a href="{{url(route("services.show",$service->id)) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('site.show')</a>
+                            <a href="{{url(route("services.show",$service->id)) }}" class="btn btn-success btn-sm"><i class="fa fa-edit"></i> @lang('site.show')</a>
+                            <a href="{{url(route("service_galaries.index",$service->id)) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> @lang('site.imgs')</a>
+                            <a href="{{url(route("services.edit",$service->id)) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('site.edit')</a>
 
 
                             <form action="{{url(route("services.destroy",$service->id)) }}" method="post" style="display: inline-block">

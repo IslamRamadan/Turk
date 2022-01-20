@@ -1,18 +1,20 @@
 
 @extends('layouts.front.front')
+
 @section('title')
     {{--    @lang("site.add_work")--}}
 
     @lang('site.contact_us')
 
 @endsection
+
 @section('content')
 
 <!-----start carousel --->
 <div  class=" relative1 " >
     <div class="abs w-100">
-        <h4 class="custom-h4">Contact Us</h4>
-        <h1>We Are Happy To Receive Your Inquiries And Suggestions.</h1>
+        <h4 class="custom-h4">@lang('site.contact_us')</h4>
+        <h1>@lang('site.happy')</h1>
 
     </div>
 </div>

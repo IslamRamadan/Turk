@@ -1,123 +1,104 @@
 
 @extends('layouts.dashboard.app2')
 @section('title')
-@lang("site.categories")
+    @lang("categories")
 @endsection
 @section('mo')
-    
 
 
 
-     @section('ti')
-         التجار
-     @endsection
 
+@section('ti')
+    @lang("site.categories")
 
-<!-- end of box body-->
-    <div class="  " style="padding:10px">
-
-            <a href="{{ route('categories.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> @lang("site.new")</a>
-
-    </div>
-
-
-        <div class="box box-primary">
+@endsection
 
 
 
-            <div class="box-header with-border">
+<div class="  " style="padding:10px">
+
+    <a href="{{ route('categories.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> @lang("site.new")</a>
+
+</div>
+
+
+<div class="box box-primary">
 
 
 
-                <form action="{{ route('categories.index') }}" method="get">
-
-                    <div class="row">
-
-                        <div class="col-md-4"  style="margin-top:5px ">
-                            <input type="text" name="search" class="form-control" placeholder="@lang('site.search')" value="{{ request()->search }}">
-                        </div>
-
-                        <div class="col-md-4" style="margin-top:5px ">
-                            <button  type="submit" class="btn btn-primary btn-block"><i class="fa fa-search"></i> @lang('site.search')</button>
 
 
 
-                        </div>
 
-                    </div>
-                </form><!-- end of form -->
-
-            </div><!-- end of box header -->
+    <div class="box-body">
 
 
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered  ">
 
-            <div class="box-body">
+                <thead>
+                <tr>
+                    <th>#</th>
 
+                    <th class="text-center">@lang('site.title_en')</th>
+                    <th class="text-center">@lang('site.title_ar')</th>
+                    <th class="text-center">@lang('site.image')</th>
 
-                <div class="table-responsive">
-                    <table class="table table-hover table-bordered  ">
+                    <th class="text-center">@lang('site.content_en')</th>
+                    <th class="text-center">@lang('site.content_ar')</th>
 
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th class="text-center">@lang('التاجر')</th>
-                            <th class="text-center">@lang('التاجر بالانجليزية')</th>
-                            <th class="text-center">@lang('اللوجو')</th>
-                            <th class="text-center">@lang('صورة الاعلان')</th>
+                    <th class="text-center">@lang('site.Procedures')</th>
+                </tr>
+                </thead>
 
-                            <th class="text-center">@lang('الحالة')</th>
-                            <th class="text-center">@lang('الترتيب')</th>
-
-                            <th class="text-center">@lang('الاجراءت')</th>
-                        </tr>
-                        </thead>
-
-                        <tbody>
-                            @foreach ($categories as $category)
+                <tbody>
+                @foreach ($categories as $category)
 
 
-                            <tr>
-                                <td>{{$loop->iteration}}</td>
-                            <td class="text-center">{{$category->name}}</td>
-                            <td class="text-center">{{$category->name_en}}</td>
-                            <td class="text-center"><img src="{{ asset($category->img) }}" alt="" width="90px" height="70px">  </td>
-                            <td class="text-center"><img src="{{ asset($category->img2) }}" alt="" width="90px" height="70px">  </td>
+                    <tr>
+                        <td>{{$loop->iteration}}</td>
+                        <td class="text-center">{{$category->title_en}}</td>
 
-                            <td class="text-center">{{$category->activity==1?"مفعل":"معطل"}}</td>
-                            <td class="text-center">{{$category->num}}</td>
+                        <td class="text-center">{{$category->title_ar}}</td>
+                        <td class="text-center"><img src="{{ asset('/storage/'.$category->img) }}" alt="" width="90px" height="70px">  </td>
 
-
-                                <td class="text-center">
-<!-- end of box body--> 
-                                        <a href="{{url(route("categories.edit",$category->id)) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> </a>
-                                        <a style="margin-top:2px " href="{{url(route("slider.vendor",$category->id)) }}" class="btn btn-info btn-sm"><i class="fa fa-image"></i> @lang('')</a>
-
-                               
-                                <form action="{{url(route("categories.destroy",$category->id)) }}" method="post" style="display: inline-block">
-                                    {{ csrf_field() }}
-                                    {{ method_field('delete') }}
-                                            <button type="submit" class="btn btn-danger delete  btn-sm"><i class="fa  fa-trash"></i> </button>
-                                        </form><!-- end of form -->
-
-                                </td>
-                            </tr>
-                            @endforeach
-
-                        </tbody>
-
-                    </table><!-- end of table -->
-                </div>
-
-                    {{ $categories->appends(request()->query())->links() }}
-                    <!-- Button trigger modal -->
+                        <td class="text-center">{{$category->content_en}}</td>
+                        <td class="text-center">{{$category->content_ar}}</td>
 
 
-            </div><!-- end of box body -->
+                        <td class="text-center">
 
-            @if(count($categories)==0)
-            <div class="alert alert-danger"> لا يوجد بيانات
-            </div>
-             @endif
+                            {{--<a href="{{url(route("works.edit",$category->id)) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('site.edit')</a>--}}
+                            <a href="{{url(route("category_galaries.index",$category->id)) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> @lang('site.imgs')</a>
+                            <a href="{{url(route("categories.edit",$category->id)) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('site.edit')</a>
+
+
+                            <form action="{{url(route("categories.destroy",$category->id)) }}" method="post" style="display: inline-block">
+                                {{ csrf_field() }}
+                                {{ method_field('delete') }}
+                                <button type="submit" class="btn btn-danger delete  btn-sm"><i class="fa  fa-trash"></i> @lang('site.delete')</button>
+                            </form><!-- end of form -->
+
+                        </td>
+                    </tr>
+                @endforeach
+
+                </tbody>
+
+            </table><!-- end of table -->
+        </div>
+
+    {{ $categories->appends(request()->query())->links() }}
+    <!-- Button trigger modal -->
+
+
+    </div><!-- end of box body -->
+
+    @if(count($categories)==0)
+
+        <div class="alert alert-danger">@lang('site.no_data')
+        </div>
+    @endif
 
 
 
@@ -128,6 +109,20 @@
 
 
 
-  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 @endsection
