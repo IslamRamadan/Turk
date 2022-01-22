@@ -68,7 +68,7 @@
             <label>@lang('site.image')</label>
             <input type="file" name="photo" class="form-control" >
         </div>
-
+        <input type="hidden" name="sections" value="{{count($sections)}}">
         @if (count($sections)>0)
             @foreach ($sections as $section )
             <h3 class="text-center">فقره </h3>

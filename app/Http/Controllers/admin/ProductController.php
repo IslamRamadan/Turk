@@ -259,7 +259,7 @@ class ProductController extends Controller
      */
     public function updateProduct(Request $request, $id)
     {
-        //    dd($request->all());
+        //    dd($request->sections);
         $messeges = [
             'title_ar'=>'اسم المنتج بالعربيه مطلوب',
             'title_ar'=>'اسم المنتج بالانجليزيه مطلوب',
@@ -363,27 +363,67 @@ class ProductController extends Controller
 
         //     }
         // }
-        // dd($product->id);
+        // dd(count($request->description_en1));
 
-        if (count($request->description_en1)>1) {
+        if (count($request->description_en1)>=1) {
             // dd('tmam',count($request->description_en1));
             $desc = $request->description_en1;
+            $section_num = $request->sections;
             $error = 0;
             $section=ProdImg::where('product_id',$id)->get();
-            for ($i=0;$i<count($desc) ;$i++) {
+            // dd($section[0]);
+            for ($i=0;$i<$section_num ;$i++) {
                 //add new name for img
-                if(!empty($desc[$i]) ){
 
-                    $section = $section->updateOrCreate([
+                    $section1[$i] = $section[$i]->update([
                         "product_id" => $product->id,
                         "description_en" => $request->description_en1[$i],
                         "description_ar" =>   $request->description_ar1[$i],
                     ]);
-                    //            dd($post);
+
+                   /////////
+                   if(!empty($request->photo1[$i]) ){
+
+                   $imgs = $request->photo1[$i];
+
+                //    for ($i=0;$i<count($imgs) ;$i++) {
+                    if(file_exists(public_path( $section[$i]->img))){
+                        unlink(public_path($section[$i]->img));
+                    }
+                       //add new name for img
+                       if(!empty($request->photo1[$i]) ){
+                           $new_name_img = time() . uniqid() . "." . $imgs->getClientOriginalExtension();
+
+                           //move img to folder
+                           $img1 = \Image::make($imgs)->resize(331, 336);
+                           $img1->save(public_path('upload/advertising/' . $new_name_img), 90);
+                           $section1[$i] = $section[$i]->update([
+
+                               "img" =>  "upload/advertising/" . $new_name_img,
 
 
+                           ]);
+                           //            dd($post);
 
+
+                       }
+
+                //    }
                 }
+                   ///////////
+                    // if($section[$i]->description_en1==null&&$section[$i]->description_ar1==null){
+                    //     if(file_exists(public_path( $section[$i]->img))){
+                    //         unlink(public_path($section[$i]->img));
+                    //     }
+                    //     dd($section[$i]->description_en1,$section[$i]->description_ar1);
+                    //     dd('stop');
+                    //     $section[$i]->delete();
+                    // }
+
+
+
+
+
 
             }
         }
