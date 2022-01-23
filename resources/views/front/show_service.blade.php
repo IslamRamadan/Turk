@@ -123,7 +123,7 @@
 
     <div class="container-fluid custom-container">
         <div class="row justify-content-between">
-            <div class="col-lg-6 col-md-6 col-12 mt-sm-3">
+            <div class="col-lg-4 col-md-6 col-12 mt-sm-3">
                 <br>
             <h4 class="custom-h4 pl-0 pr-0">{!!$service['section2_title_'.app()->getLocale()] !!}
             </h4>

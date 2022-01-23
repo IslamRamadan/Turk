@@ -142,7 +142,7 @@
                 $.ajax({
                     url : "{{ route('add.section') }}",
                     type: 'post',
-                    data: {_token:"{{csrf_token()}}"},
+                    data: {_token:"{{csrf_token()}}",type:2},
                     success: function (data) {
                         console.log(data);
                         $("#section").append(data);

@@ -41,9 +41,9 @@
     <div class="container text-center center-p">
         <br>
 
-        <h1>@lang('site.view_more')
+        <h4>@lang('site.to_buss')
 
-        </h1>
+        </h4>
         <h1>@lang('site.p_s')
 
         </h1><br>
@@ -271,10 +271,10 @@
                 <h4 class="mb-4">@lang('site.dry_i')</h4>
                 <h1>@lang('site.dry_i2')</h1>
                 <p>@lang('site.dry_i3')</p>
-                <br>
+                {{-- <br>
                 <button class="btn btn-one">@lang('site.references')
                 </button>
-                <br>
+                <br> --}}
             </div>
 
             <div class="container-fluid  ">

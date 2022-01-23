@@ -59,7 +59,7 @@ class SliderController extends Controller
             'photo.required'=>"صورة السليدر مطلوبة",
             'photo.mimes'=>" يجب ان تكون الصورة jpg او jpeg او png  ",
             'photo.max'=>" الحد الاقصي للصورة 4 ميجا ",
-            "text.required"=>"اسم السليدر مطلوب"
+            "num.required"=>"ترتيب السليدر مطلوب"
 
 
            ];
@@ -69,7 +69,7 @@ class SliderController extends Controller
 
 
             'photo' => 'required|mimes:jpg,webp,jpeg,png|max:4100',
-            "text"=>  " required"
+            "num"=>  " required"
 
         ], $messeges);
 
@@ -144,7 +144,7 @@ class SliderController extends Controller
 
             'photo.mimes'=>" يجب ان تكون الصورة jpg او jpeg او png  ",
             'photo.max'=>" الحد الاقصي للصورة 4 ميجا ",
-            "text.required"=>"اسم السليدر مطلوب"
+            "num.required"=>"ترتيب السليدر مطلوب"
 
 
            ];
@@ -154,7 +154,7 @@ class SliderController extends Controller
 
 
             'photo' => 'mimes:jpg,jpeg,webp,png|max:4100',
-            "text"=>  " required"
+            "num"=>  " required"
 
         ], $messeges);
 
@@ -167,11 +167,17 @@ class SliderController extends Controller
             Alert::error('error', $validator->errors()->first());
             return back();
         }
+        $category= Slider::findOrFail($id);
 
         if($request->photo){
             $img =  $request->photo ;
+            // dd($img);
+            if (file_exists(public_path($category->img))) {
+                unlink(public_path($category->img));
+            }
             //add new name for img
             $new_name_img = time().uniqid().".".$img->getClientOriginalExtension();
+
 
             //move img to folder
            $move = $img->move(public_path("upload/sliders"), $new_name_img);
@@ -182,7 +188,6 @@ class SliderController extends Controller
              $new = "upload/sliders/".$new_name_img ;
              $request->merge(['img' => $new]);
         }
-        $category= Slider::findOrFail($id);
         $category= $category->update($request->except(['photo']));
         if ($category){
 
@@ -206,6 +211,9 @@ class SliderController extends Controller
     {
 
       $category= Slider::findOrFail($id);
+      if(file_exists(public_path( $category->img))){
+        unlink(public_path($category->img));
+            }
 
 
 

@@ -259,7 +259,7 @@ class ProductController extends Controller
      */
     public function updateProduct(Request $request, $id)
     {
-        //    dd($request->sections);
+        //    dd($request->all());
         $messeges = [
             'title_ar'=>'اسم المنتج بالعربيه مطلوب',
             'title_ar'=>'اسم المنتج بالانجليزيه مطلوب',
@@ -364,8 +364,7 @@ class ProductController extends Controller
         //     }
         // }
         // dd(count($request->description_en1));
-
-        if (count($request->description_en1)>=1) {
+        if ($request->has('description_en1')) {
             // dd('tmam',count($request->description_en1));
             $desc = $request->description_en1;
             $section_num = $request->sections;
@@ -428,6 +427,55 @@ class ProductController extends Controller
             }
         }
 
+        if ($request->hasfile('photo2')) {
+            $imgs = $request->photo2;
+            $error = 0;
+            for ($i=0;$i<=count($imgs) ;$i++) {
+                //add new name for img
+                if(!empty($request->photo2[$i]) ){
+                    $new_name_img = time() . uniqid() . "." . $imgs[$i]->getClientOriginalExtension();
+
+                    //move img to folder
+                    $img1 = \Image::make($imgs[$i])->resize(331, 336);
+                    $img1->save(public_path('upload/advertising/' . $new_name_img), 90);
+                    $post1 = ProdImg::create([
+
+                        "product_id" => $product->id,
+                        "description_en" => $request->description_en2[$i],
+                        "description_ar" =>   $request->description_ar2[$i],
+                        "img" =>  "upload/advertising/" . $new_name_img,
+
+
+                    ]);
+                    //            dd($post);
+
+
+
+                }
+
+            }
+        }
+
+        $empty_sections = ProdImg::where('product_id',$id)->where('description_en',null)->where('description_ar',null)->get();
+        if ($empty_sections) {
+            foreach ($empty_sections as $one) {
+                // dd($one->img);
+                if (file_exists(public_path($one->img))) {
+                // dd($one->img);
+
+                    unlink(public_path($one->img));
+                }
+                // dd("stop");
+
+                $one->delete();
+            }
+        }
+
+
+
+
+
+
 
         //TODO :: -----------------------------//
 
@@ -458,18 +506,24 @@ class ProductController extends Controller
 
 
 
-            $product->delete();
+            // $product->delete();
 
 
 
             $img = ProdImg::where("product_id", $id)->get();
+            // dd($img[0]);
 
 
             if ($img) {
                 foreach ($img as $one) {
+                    // dd($one->img);
                     if (file_exists(public_path($one->img))) {
+                    // dd($one->img);
+
                         unlink(public_path($one->img));
                     }
+                    // dd("stop");
+
                     $one->delete();
                 }
             }
@@ -485,9 +539,11 @@ class ProductController extends Controller
         //        return Response::json($user);
         return redirect()->route('products.index');
     }
-    public function add_section()
+    public function add_section(Request $request)
     {
-        $val = ' <h3 class="text-center">فقره </h3>
+        $type=$request->type;
+        if ($type==1) {
+            $val = ' <h3 class="text-center">فقره </h3>
         <div class="form-group">
             <label>مجتوي الفقره بالعربيه</label>
             <textarea type="text" name="description_ar1[]" class="form-control" rows="10"></textarea>
@@ -504,6 +560,27 @@ class ProductController extends Controller
             <label>الصوره</label>
             <input type="file" name="photo1[]" class="form-control" value="">
         </div>';
+        }
+        else{
+            $val = ' <h3 class="text-center">فقره </h3>
+            <div class="form-group">
+                <label>مجتوي الفقره بالعربيه</label>
+                <textarea type="text" name="description_ar2[]" class="form-control" rows="10"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>محتوي الفقره بالانجليزيه</label>
+                <textarea type="text" name="description_en2[]" class="form-control" rows="10">
+                </textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label>الصوره</label>
+                <input type="file" name="photo2[]" class="form-control" value="">
+            </div>';
+        }
+
 
         return response()->json($val);
 

@@ -30,6 +30,16 @@
 
         ])!!}
         {{ csrf_field() }}
+        <div class="form-group">
+            <label>@lang('site.name_en') @lang('site.head_appear')</label>
+                <input type="text" name="name_en" class="form-control" value="{{old('name_en')}}">
+            </div>
+
+
+        <div class="form-group">
+            <label>@lang('site.name_ar') @lang('site.head_appear')</label>
+            <input type="text" name="name_ar" class="form-control" value="{{old('name_ar')}}">
+        </div>
 
         <div class="form-group">
 
@@ -54,16 +64,7 @@
         </div>
 
 
-        <div class="form-group">
-        <label>@lang('site.name_en')</label>
-            <input type="text" name="name_en" class="form-control" value="{{old('name_en')}}">
-        </div>
 
-
-        <div class="form-group">
-            <label>@lang('site.name_ar')</label>
-            <input type="text" name="name_ar" class="form-control" value="{{old('name_ar')}}">
-        </div>
 
 
 

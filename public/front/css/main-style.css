@@ -7,11 +7,25 @@
             src: url(bein-ar-normal_0.ttf);
         }
         
+        @font-face {
+            font-family: "Almarai";
+            src: url('../css/fonts/Almarai-Regular.ttf');
+        }
+        
+        @font-face {
+            font-family: "Josefin Sans";
+            src: url('../css/fonts/JosefinSans-Regular.ttf');
+        }
+        
         body {
-            font-family: Helvetica;
+            font-family: "Josefin Sans", Arial, sans-serif !important;
             /* text-transform: capitalize; */
             color: rgb(0, 0, 0);
             overflow-x: hidden;
+        }
+        
+        body:lang(ar) {
+            font-family: 'Almarai', sans-serif !important;
         }
         
         .arabic {
@@ -260,14 +274,14 @@
         }
         
         .center-p {
-            padding-top: 10vh;
-            padding-bottom: 10vh;
+            padding-top: 5vh;
+            padding-bottom: 5vh;
             width: 40%;
         }
         
         .center-p1 {
-            padding-top: 10vh;
-            padding-bottom: 10vh;
+            padding-top: 5vh;
+            padding-bottom: 5vh;
             width: 100%;
         }
         
@@ -306,7 +320,7 @@
         .img-div {
             position: absolute;
             width: 100%;
-            background-color: black;
+            background-color: #37937e;
             color: white;
             bottom: 0;
             left: 0;
@@ -322,7 +336,7 @@
         }
         
         .img-div h5 {
-            color: rgb(55 147 126);
+            color: rgb(0, 0, 0);
             font-weight: 600;
         }
         
@@ -857,4 +871,9 @@
         
         div#navbarSupportedContent:lang(ar) {
             font-size: 1rem;
+        }
+        
+        ul {
+            list-style-image: url(../img/mark.png);
+            column-count: 2;
         }
