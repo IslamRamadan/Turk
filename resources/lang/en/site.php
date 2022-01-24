@@ -401,7 +401,7 @@ Why Spend So Much Time And Energy On Home Cleaning When You Can Have A Cleaning 
 'contact_ar'=>'contact in Arabic',
 'contact_en'=>'contact in English',
 'head_appear'=>'(Appear in header)',
-// 'dry_i5'=>'',
+'wats'=>'WhatsApp Number',
 // 'dry_i5'=>'',
 // 'dry_i5'=>'',
 // 'dry_i5'=>'',

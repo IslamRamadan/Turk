@@ -31,9 +31,9 @@
                 <ul class="navbar-nav  pad-0">
 
                     <li class="nav-item ">
-                        <a href="#" title="" class="nav-link "> <i class="fas fa-phone"></i>  {{$my_setting->contact_phone}}</a></li>
+                        <a href="tel:{{$my_setting->contact_phone}}" title="" class="nav-link "> <i class="fas fa-phone"></i>  {{$my_setting->contact_phone}}</a></li>
                     <li class="nav-item ">
-                        <a href="#" title="" class="nav-link "> <i class="fab fa-whatsapp"></i>  {{$my_setting->wats}}</a>
+                        <a href="https://wa.me/{{$my_setting->wats}}" title="" class="nav-link "> <i class="fab fa-whatsapp"></i>  {{$my_setting->wats}}</a>
                     </li></ul>
             </nav>
         </div>
@@ -43,7 +43,7 @@
 
                     <li class="nav-item "><a class="nav-link " href="{{$my_setting->insta_link}}" title="instagram"><i class="fab fa-instagram"></i>  </a></li>
                     <li class="nav-item "><a class="nav-link " href="{{$my_setting->tw_link}}" title="twitter"><i class="fab fa-twitter"></i>  </a></li>
-                    <li class="nav-item "><a class="nav-link " href="{{$my_setting->fb_link}}" title="call us"><i class="fas fa-phone"></i>  </a></li>
+                    <li class="nav-item "><a class="nav-link " href="tel:{{$my_setting->contact_phone}}" title="call us"><i class="fas fa-phone"></i>  </a></li>
                     <li class="nav-item "><a class="nav-link " href="{{$my_setting->yt_link}}" title="youtube"><i class="fab fa-youtube"></i>  </a></li>
 
                 </ul>

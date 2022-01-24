@@ -49,13 +49,18 @@
             $name = $setting->name;
             $name_en = $setting->name_en;
 
-            $color = $setting->color;
+            $wats = $setting->wats;
+            $yt_link = $setting->yt_link;
+            $insta_link = $setting->insta_link;
+            $tw_link = $setting->tw_link;
             $color2 = $setting->color2;
             $id = $setting->id;
             $dolar = $setting->dolar;
             $android = $setting->android;
             $ios = $setting->ios;
             $contact_phone = $setting->contact_phone;
+            $address = $setting->address;
+            $address_en = $setting->address_en;
 
             ?>
 
@@ -66,7 +71,12 @@
             $id = '';
             $dolar = '';
             $contact_phone = '';
-            $color = '';
+            $address = '';
+            $address_en = '';
+            $wats = '';
+            $yt_link = '';
+            $insta_link = '';
+            $tw_link = '';
             $colo2r = '';
             $name = '';
             $name_ar = '';
@@ -158,8 +168,44 @@
 
 
         <div class="form-group">
+            <label>@lang('site.address')</label>
+            {!! Form::text('address', $address, [
+    'class' => 'form-control',
+]) !!}
+        </div>
+        <div class="form-group">
+            <label>@lang('site.address_en')</label>
+            {!! Form::text('address_en', $address_en, [
+    'class' => 'form-control',
+]) !!}
+        </div>
+        <div class="form-group">
             <label>@lang('site.contact_phone')</label>
             {!! Form::text('contact_phone', $contact_phone, [
+    'class' => 'form-control',
+]) !!}
+        </div>
+        <div class="form-group">
+            <label>@lang('site.wats')</label>
+            {!! Form::text('wats', $wats, [
+    'class' => 'form-control',
+]) !!}
+        </div>
+        <div class="form-group">
+            <label>@lang('site.yt_link')</label>
+            {!! Form::text('yt_link', $yt_link, [
+    'class' => 'form-control',
+]) !!}
+        </div>
+        <div class="form-group">
+            <label>@lang('site.tw_link')</label>
+            {!! Form::text('tw_link', $tw_link, [
+    'class' => 'form-control',
+]) !!}
+        </div>
+        <div class="form-group">
+            <label>@lang('site.insta_link')</label>
+            {!! Form::text('insta_link', $insta_link, [
     'class' => 'form-control',
 ]) !!}
         </div>
@@ -169,7 +215,7 @@
         {{-- <span> @lang('site.choose_color')</span> --}}
         {{-- <a href="https://www.color-hex.com/color-names.html" target="_blank">@lang('site.here')</a> --}}
         {{-- </label> --}}
-        {{-- {!!  Form::text('color',$color,[ --}}
+        {{-- {!!  Form::text('color',$wats,[ --}}
         {{-- "class"=>"form-control" --}}
 
         {{-- ])!!} --}}
@@ -180,7 +226,7 @@
         {{-- <span>@lang('site.choose_color')</span> --}}
         {{-- <a href="https://www.color-hex.com/color-names.html" target="_blank">@lang('site.here')</a> --}}
         {{-- </label> --}}
-        {{-- {!!  Form::text('color2',$color2,[ --}}
+        {{-- {!!  Form::text('color2',$wats2,[ --}}
         {{-- "class"=>"form-control" --}}
 
         {{-- ])!!} --}}
@@ -195,7 +241,7 @@
         {{-- </div> --}}
 
 
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label>@lang('site.ggl_play')</label>
             {!! Form::text('android', $android, [
     'class' => 'form-control',
@@ -207,7 +253,7 @@
             {!! Form::text('ios', $ios, [
     'class' => 'form-control',
 ]) !!}
-        </div>
+        </div> --}}
 
 
         <div class="form-group">

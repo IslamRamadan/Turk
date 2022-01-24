@@ -9,7 +9,14 @@
                     {{ $my_setting->name }}
                 @endif
 </h2> --}}
-                <p>@lang('site.home_address')</p>
+                <p>
+
+                @if (app()->getLocale() == 'en')
+                    {{ $my_setting->address_en }}
+                @else
+                    {{ $my_setting->address }}
+                @endif
+                </p>
             </div>
             <div class="col-md-9">
 
@@ -29,7 +36,7 @@
 
                         <li class="nav-item "><a class="nav-link " href="{{$my_setting->insta_link}}" title="instagram"><i class="fab fa-instagram"></i>  </a></li>
                         <li class="nav-item "><a class="nav-link " href="{{$my_setting->tw_link}}" title="twitter"><i class="fab fa-twitter"></i>  </a></li>
-                        <li class="nav-item "><a class="nav-link " href="{{$my_setting->fb_link}}" title="call us"><i class="fas fa-phone"></i>  </a></li>
+                        <li class="nav-item "><a class="nav-link " href="tel:{{$my_setting->contact_phone}}" title="call us"><i class="fas fa-phone"></i>  </a></li>
                         <li class="nav-item "><a class="nav-link " href="{{$my_setting->yt_link}}" title="youtube"><i class="fab fa-youtube"></i>  </a></li>
 
                     </ul>
@@ -50,7 +57,7 @@
 
 
 
-<a href="whatsapp://{{$my_setting->wats}}">
+<a href="https://wa.me/{{$my_setting->wats}}">
     <img src="{{asset('front/img/whatsapp.svg')}}" class="whatsapp shadow">
 </a>
 
