@@ -43,7 +43,7 @@
 
                 </nav>
             </div>
-            <p class="col-12 text-center"><br><br>All rights reserved © 2022 | This template is made by <a href="https://bluezonekw.com/" target="_blank" class="">blue zone</a></p>
+            <p class="col-12 text-center"><br><br>All rights reserved © 2022 | This template is made by <a href="#" class="">{!! $my_setting['name_en'] !!}</a></p>
 
         </div>
 

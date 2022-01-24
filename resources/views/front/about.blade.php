@@ -46,7 +46,7 @@
     <h1>@lang('site.dry_i19')</h1>
     <p>@lang('site.dry_i20')</p>
     <br>
-    <button class="btn btn-one">@lang('site.references')
+    {{-- <button class="btn btn-one">@lang('site.references') --}}
     </button>
     <br>
 </div>
