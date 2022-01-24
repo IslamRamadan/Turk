@@ -3,12 +3,12 @@
         <br><br>
         <div class="row">
             <div class="col-12">
-                <h2> @if (app()->getLocale() == 'en')
+                {{-- <h2> @if (app()->getLocale() == 'en')
                     {{ $my_setting->name_en }}
                 @else
                     {{ $my_setting->name }}
                 @endif
-</h2>
+</h2> --}}
                 <p>@lang('site.home_address')</p>
             </div>
             <div class="col-md-9">

@@ -335,6 +335,10 @@
             transition: 1s;
         }
         
+        .img-div a:hover {
+            color: #000;
+        }
+        
         .img-div h5 {
             color: rgb(0, 0, 0);
             font-weight: 600;
@@ -516,6 +520,7 @@
         
         a:hover {
             color: #37937e;
+            text-decoration: none;
         }
         
         a {
@@ -875,5 +880,4 @@
         
         ul {
             list-style-image: url(../img/mark.png);
-            column-count: 2;
         }
