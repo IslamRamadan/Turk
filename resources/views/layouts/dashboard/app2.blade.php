@@ -52,6 +52,8 @@
                   <li  class="moha" ><a style="" href="{{route("why_works.index")}}"><i class="fa fa-list"></i> <span>@lang('site.why_work')  </span></a></li> --}}
                   <li  class="moha" ><a style="" href="{{route("contact.index")}}"><i class="fa fa-list"></i> <span>@lang('site.contacts_sec')  </span></a></li>
 
+                  <li  class="moha" ><a style="" href="{{route("client_galaries.index")}}"><i class="fa fa-list"></i> <span> @lang('site.client_galary') </span></a></li>
+                  <li  class="moha" ><a style="" href="{{route("sections.index")}}"><i class="fa fa-list"></i> <span> @lang('site.sections') </span></a></li>
                   <li  class="moha" ><a style="" href="{{route("settings.index")}}"><i class="fa fa-list"></i> <span> @lang('site.settings') </span></a></li>
                 <li  class="moha" ><a style="" href="{{route("users.index")}}"><i class="fa fa-users"> </i><span>@lang('site.managers') </span></a></li>
                 <li  class="moha" ><a style="" href="{{route("roles.index")}}"><i class="fa fa-list"></i> <span>@lang('site.manager_roles') </span></a></li>

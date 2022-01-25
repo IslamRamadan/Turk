@@ -4,7 +4,7 @@
 @section('title')
     {{--    @lang("site.add_work")--}}
 
-    @lang('site.contact_us')
+    {!! $my_setting['contact_'.app()->getLocale()] !!}
 
 @endsection
 
@@ -13,8 +13,8 @@
 <!-----start carousel --->
 <div  class=" relative1 " >
     <div class="abs w-100">
-        <h4 class="custom-h4">@lang('site.contact_us')</h4>
-        <h1>@lang('site.happy')</h1>
+        <h4 class="custom-h4">{!! $my_setting['contact_'.app()->getLocale()] !!}</h4>
+        <h1>{!! $my_section['contacts_title_'.app()->getLocale()] !!}</h1>
 
     </div>
 </div>
@@ -26,10 +26,10 @@
         <div class="row  bg-w">
 
             <div class="col-md-8 ">
-                <h2> @lang('site.contact_us')
+                <h2> {!! $my_setting['contact_'.app()->getLocale()] !!}
                 </h2>
                 <p>
-                    @lang('site.happy')
+                    {!! $my_section['contacts_title_'.app()->getLocale()] !!}
                 </p>
 
 

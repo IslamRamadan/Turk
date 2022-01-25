@@ -41,11 +41,10 @@
     <div class="container text-center center-p">
         <br>
 
-        <h4>@lang('site.to_buss')
+        <h4>{!! $my_section['title2_'.app()->getLocale()] !!}
 
         </h4>
-        <h1>@lang('site.p_s')
-
+        <h1>{!! $my_section['content2_'.app()->getLocale()] !!}
         </h1><br>
 
     </div>
@@ -162,11 +161,10 @@
     <div class="container text-center center-p">
         <br>
 
-        <h4 class="mb-4">@lang('site.dry_ice')</h4>
-        <h1>@lang('site.to_buss')</h1>
-        <h1>@lang('site.p_s')
+        <h4 class="mb-4">{!! $my_section['title1_'.app()->getLocale()] !!}</h4>
+        <h1>{!! $my_section['name1_'.app()->getLocale()] !!}
         </h1>
-        <p>@lang('site.carb')</p>
+        <p>{!! $my_section['content1_'.app()->getLocale()] !!}</p>
         <br>
 
     </div>
@@ -179,7 +177,7 @@
             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                 <a href="{{route('category.show',$item->id)}}">
                 <div class="" style="position: relative">
-                    <img src="{{url('storage/'.$item->img)}}" alt="" class="w-100 bright-50">
+                    <img src="{{url('/storage/'.$item->img)}}" alt="" class="w-100 bright-50">
                     <div class="img-div1" >
                         <h2>{!! $item['name_'.app()->getLocale()] !!}</h2>
 
@@ -211,7 +209,7 @@
 
 <div class="component">
     <blockquote class="callout quote EN">
-       <h2> @lang('site.cus')
+       <h2> {!! $my_section['qoute1_'.app()->getLocale()] !!}
        </h2>
        </blockquote>
     </div>
@@ -268,9 +266,9 @@
 
             <div class="container text-center center-p ">
                 <br>
-                <h4 class="mb-4">@lang('site.dry_i')</h4>
-                <h1>@lang('site.dry_i2')</h1>
-                <p>@lang('site.dry_i3')</p>
+                <h4 class="mb-4">{!! $my_section['title3_'.app()->getLocale()] !!}</h4>
+                <h1>{!! $my_section['name3_'.app()->getLocale()] !!}</h1>
+                <p>{!! $my_section['content3_'.app()->getLocale()] !!}</p>
                 {{-- <br>
                 <button class="btn btn-one">@lang('site.references')
                 </button>
@@ -352,7 +350,7 @@
 
                 <div class="component">
                     <blockquote class="callout quote EN">
-                       <h2>@lang('site.dry_i5')
+                       <h2>{!! $my_section['qoute2_'.app()->getLocale()] !!}
                        </h2>
                        </blockquote>
                     </div>
@@ -363,18 +361,18 @@
     <div class="container-fluid">
         <br>
 
-        <h4 class="custom-h4" >@lang('site.dry_i6')
+        <h4 class="custom-h4" >{!! $my_section['last_title_'.app()->getLocale()] !!}
         </h4>
 
         <div class="row">
 
 
             <div class="col-md-3 col-12 align-self-center">
-                <h3 class="mb-5">@lang('site.dry_i5')</h3>
-                <p>@lang('site.dry_i7')</p>
+                <h3 class="mb-5">{!! $my_section['last_name_'.app()->getLocale()] !!}</h3>
+                <p>{!! $my_section['last_content_'.app()->getLocale()] !!}</p>
             </div>
             <div class="col-md-9 col-12">
-                <img src="{{url('front/img/17.webp')}}" alt="" class="w-100">
+                <img src="{{ url('storage/'.$my_section->img) }}" alt="" class="w-100">
             </div>
 
         </div>
@@ -383,12 +381,11 @@
     <div class="container-fluid contact-container">
         <div class="row justify-content-between">
             <div class="col-lg-4 col-md-6 col-12 mt-sm-3">
-                <h1>@lang('site.dry_i8')</h1>
-                <h1>@lang('site.dry_i9')
-                </h1>
+                <h1>{!! $my_section['contact_name_'.app()->getLocale()] !!}</h1>
+
                 <br>
                 <br>
-                <p>@lang('site.dry_i10')</p>
+                <p>{!! $my_section['contact_content_'.app()->getLocale()] !!}</p>
             </div>
             <div class="col-lg-4 col-md-6 col-12 cus-form">
                 {!! Form::model("", ['route' => ['contacts.store'],

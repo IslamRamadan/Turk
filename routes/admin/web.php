@@ -36,11 +36,13 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
             Route::resource('/sliders', 'sliderController');
 
                 Route::get('/settings', 'settingController@index')->name('settings.index');
+                Route::get('/sections', 'sectionController@index')->name('sections.index');
                 Route::get('/contact', 'settingController@show_contact')->name('contact.index');
 
 
 
             Route::post('/settings/update', 'settingController@update')->name('settings.update');
+            Route::post('/sections/update', 'sectionController@update')->name('sections.update');
 
             Route::post('/items/update/color/{id}', 'itemController@update_color')->name('items.update.color');
 
@@ -73,6 +75,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
                 Route::get('/post_galaries/{id}', 'postGalaryController@index')->name("post_galaries.index");
                 Route::post('/post_galaries/store/{id}', 'postGalaryController@store')->name("post_galaries.store");
                 Route::delete('/post_galaries/destroy/{id}', 'postGalaryController@destroy')->name("post_galaries.destroy");
+                Route::get('/service_galaries/{id}', 'serviceGalaryController@index')->name("service_galaries.index");
+                Route::get('/client_galaries', 'clientGalaryController@index')->name("client_galaries.index");
+                Route::post('/client_galaries/store', 'clientGalaryController@store')->name("client_galaries.store");
+                Route::delete('/client_galaries/destroy/{id}', 'clientGalaryController@destroy')->name("client_galaries.destroy");
                 Route::get('/service_galaries/{id}', 'serviceGalaryController@index')->name("service_galaries.index");
                 Route::post('/service_galaries/store/{id}', 'serviceGalaryController@store')->name("service_galaries.store");
                 Route::delete('/service_galaries/destroy/{id}', 'serviceGalaryController@destroy')->name("service_galaries.destroy");

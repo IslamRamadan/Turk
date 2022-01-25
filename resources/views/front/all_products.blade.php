@@ -3,34 +3,34 @@
 @extends('layouts.front.front')
 @section('title')
 
-    @lang('site.all_products')
+{!! $my_setting['product_'.app()->getLocale()] !!}
 
 @endsection
 @section('content')
 
   <div  class=" relative1 " >
     <div class="abs w-100">
-        <h4 class="custom-h4">@lang('site.dry_i11')</h4>
-        <h1>@lang('site.dry_i12')</h1>
-       <h1>@lang('site.dry_i13')</h1>
+        <h4 class="custom-h4">{!! $my_setting['product_'.app()->getLocale()] !!}</h4>
+        <h1>{!! $my_section['products_title_'.app()->getLocale()] !!}</h1>
+
     </div>
 </div>
 <div class="container text-center center-p">
     <br>
 
-    <h4 class="mb-4">@lang('site.dry_i14')</h4>
+    <h4 class="mb-4">{!! $my_section['product1_title_'.app()->getLocale()] !!}</h4>
 
-    <h1>@lang('site.dry_i15')</h1>
-    <p>@lang('site.carb')</p>
+    <h1>{!! $my_section['product1_name_'.app()->getLocale()] !!}</h1>
+    <p>{!! $my_section['product1_content_'.app()->getLocale()] !!}</p>
     <br>
 
 </div>
 
 
 <br>
-
+{{--
 <h4 class="custom-h4 mb-5" >@lang('site.dry_i16')
-</h4>
+</h4> --}}
 
 <div class="container">
 

@@ -9,8 +9,8 @@
 
 <div  class=" relative1 " >
     <div class="abs w-100">
-        <h4 class="custom-h4">@lang('site.blog')</h4>
-        <h1>@lang('site.blog')</h1>
+        <h4 class="custom-h4">{!! $my_setting['blog_'.app()->getLocale()] !!}</h4>
+        <h1>{!! $my_section['posts_title_'.app()->getLocale()] !!}</h1>
 
     </div>
 </div>

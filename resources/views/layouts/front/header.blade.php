@@ -147,7 +147,7 @@
 
                         <li class="nav-item "><a class="nav-link " href="{{route('all_products')}}" >{!! $my_setting['product_'.app()->getLocale()] !!}</a></li>
                         <li class="nav-item "><a class="nav-link " href="{{route('all_posts')}}" >{!! $my_setting['blog_'.app()->getLocale()] !!}</a></li>
-                        <li class="nav-item "><a class="nav-link " href="{{route('about.index')}}" >@lang('site.about_us')</a></li>
+                        <li class="nav-item "><a class="nav-link " href="{{route('about.index')}}" >{!! $my_setting['about_'.app()->getLocale()] !!}</a></li>
                         {{-- <li class="nav-item">
                             <div class="dropdown nav-link" >
                                 <div class=" dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -172,7 +172,7 @@
                         <li class="nav-item"><a class="nav-link " href="{{route('service.show',$item->id)}}" >{!!$item['title_'.app()->getLocale()]!!}</a></li>
                         @endforeach --}}
 
-                        <li class="nav-item"><a class="nav-link " href="{{route('contacts.index')}}" >@lang('site.contact_us')</a></li>
+                        <li class="nav-item"><a class="nav-link " href="{{route('contacts.index')}}" >{!! $my_setting['contact_'.app()->getLocale()] !!}</a></li>
 
                         <li class="nav-item">
                             <div class="dropdown nav-link" >

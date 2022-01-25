@@ -3,7 +3,7 @@
 @section('title')
     {{--    @lang("site.add_work")--}}
 
-    @lang('site.contact_us')
+    {!! $my_section['about_title_'.app()->getLocale()] !!}
 
 @endsection
 @section('content')
@@ -11,8 +11,8 @@
 <!-----start carousel --->
 <div  class=" relative1 " >
     <div class="abs w-100">
-        <h4 class="custom-h4">@lang('site.about_us')</h4>
-        <h1>@lang('site.dry_i17')</h1>
+        <h4 class="custom-h4">{!! $my_setting['about_'.app()->getLocale()] !!}</h4>
+        <h1>{!! $my_section['about_title_'.app()->getLocale()] !!}</h1>
 
     </div>
 </div>
@@ -39,7 +39,7 @@
         </div> --}}
     </div>
 </div>
-
+{{--
 <div class="container text-center center-p col-md-6 col-sm-12">
     <br>
     <h4 class="mb-4">@lang('site.dry_i18')</h4>
@@ -47,9 +47,9 @@
     <p>@lang('site.dry_i20')</p>
     <br>
     {{-- <button class="btn btn-one">@lang('site.references') --}}
-    </button>
+    {{-- </button>
     <br>
-</div>
+</div> --}}
 
 <div class="container-fluid mb-3">
     <br>

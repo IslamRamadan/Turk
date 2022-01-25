@@ -13,10 +13,10 @@
 
     <img src="{{url('front/img/20.webp')}}" class="w-100" alt="">
     <div class="img-div3" >
-        <h2 class="mb-3">If coldness is of vital importance to you!
+        {{-- <h2 class="mb-3">If coldness is of vital importance to you!
         </h2>
         <h2 class="c-b">Specially insulated you should review our containers
-        </h2>
+        </h2> --}}
 
 
 
@@ -27,7 +27,7 @@
 
     <div class="component">
         <blockquote class="callout quote EN">
-           <h2> @lang('site.cus')
+           <h2> {!! $my_section['qoute1_'.app()->getLocale()] !!}
            </h2>
            </blockquote>
         </div>

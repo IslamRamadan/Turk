@@ -2,7 +2,7 @@
 @section('title')
 
 
-    @lang('site.blog')
+{!! $my_setting['product_'.app()->getLocale()] !!}
 
 @endsection
 @section('content')
@@ -11,7 +11,7 @@
 
 <div  class=" relative1 " >
     <div class="abs w-100">
-        <h4 class="custom-h4">@lang('site.blog')</h4>
+        <h4 class="custom-h4">{!! $my_setting['product_'.app()->getLocale()] !!}</h4>
         <h1>{!!$post['title_'.app()->getLocale()]!!}</h1>
 
     </div>

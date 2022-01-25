@@ -25,7 +25,7 @@
             <br>
                 <h4 class="mb-4">{!! $category['name_'.app()->getLocale()] !!}</h4>
             <blockquote class="callout quote EN">
-               <h2>@lang('site.cus')
+               <h2>{!! $my_section['qoute1_'.app()->getLocale()] !!}
                </h2>
                </blockquote>
             </div>

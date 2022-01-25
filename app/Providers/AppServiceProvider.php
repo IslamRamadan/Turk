@@ -17,7 +17,7 @@ use App\Models\SubCategory;
 
 
 use App\Models\Category;
-
+use App\Models\Section;
 use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
@@ -44,6 +44,8 @@ class AppServiceProvider extends ServiceProvider
       ///////////////////////////////////////////////
        $my_setting= Setting::first();
         view()->share(compact('my_setting'));
+       $my_section= Section::first();
+        view()->share(compact('my_section'));
         ///////////////////////////////////////////////
 
     }
