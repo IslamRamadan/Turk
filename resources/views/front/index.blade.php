@@ -282,66 +282,14 @@
                 </h2>
                 <br>
                 <div class="row align-items-center">
+                    @foreach (App\Models\ClientImg::all() as $item)
                     <div class="col-lg-2 col-md-3 col-4">
-                        <img src="{{url('front/img/9.webp')}}" alt="" style="
-    width: -webkit-fill-available;
-">
+                        <img src="{{url($item->img)}}" alt="" style="
+                            width: -webkit-fill-available;
+                        ">
                     </div>
-                    <div class="col-lg-2 col-md-3 col-4">
-                        <img src="{{url('front/img/10.webp')}}" alt="" style="
-    width: -webkit-fill-available;
-">
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-4">
-                        <img src="{{url('front/img/11.webp')}}" alt="" style="
-    width: -webkit-fill-available;
-">
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-4">
-                        <img src="{{url('front/img/12.webp')}}" alt="" style="
-    width: -webkit-fill-available;
-">
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-4 ">
-                        <img src="{{url('front/img/13.webp')}}" alt="" style="
-    width: -webkit-fill-available;
-">
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-4">
-                        <img src="{{url('front/img/14.webp')}}" alt="" style="
-    width: -webkit-fill-available;
-">
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-4">
-                        <img src="{{url('front/img/15.webp')}}" alt="" style="
-    width: -webkit-fill-available;
-">
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-4">
-                        <img src="{{url('front/img/12.webp')}}" alt="" style="
-    width: -webkit-fill-available;
-">
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-4">
-                        <img src="{{url('front/img/11.webp')}}" alt="" style="
-    width: -webkit-fill-available;
-">
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-4">
-                        <img src="{{url('front/img/16.webp')}}" alt="" style="
-    width: -webkit-fill-available;
-">
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-4">
-                        <img src="{{url('front/img/10.webp')}}" alt="" style="
-    width: -webkit-fill-available;
-">
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-4">
-                        <img src="{{url('front/img/9.webp')}}" alt="" style="
-    width: -webkit-fill-available;
-">
-                    </div>
+                    @endforeach
+
                 </div>
 
             </div>
