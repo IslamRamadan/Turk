@@ -38,6 +38,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
                 Route::get('/settings', 'settingController@index')->name('settings.index');
                 Route::get('/sections', 'sectionController@index')->name('sections.index');
                 Route::get('/contact', 'settingController@show_contact')->name('contact.index');
+            Route::delete('/contact/destroy/{id}', 'settingController@destroy')->name("contact.destroy");
+
 
 
 

@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="date">
-                            <h4>20<span>May</span></h4>
+                            <h4>{{ $item->updated_at->format('d') }}<span>{{ $item->updated_at->format('M') }}</span></h4>
                         </div>
                         <div class="more text-dir1">
                             <a href="{{route('post.show',$item->id)}}">@lang('site.view_more')</a>

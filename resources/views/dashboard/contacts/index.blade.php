@@ -35,6 +35,7 @@
                     <th class="text-center">@lang('site.email')</th>
                     <th class="text-center">@lang('site.phone')</th>
                     <th class="text-center">@lang('site.comment')</th>
+                    <th class="text-center">@lang('site.Procedures')</th>
 
                 </tr>
                 </thead>
@@ -50,6 +51,17 @@
                         <td class="text-center">{{$contact->email}}</td>
                         <td class="text-center">{{$contact->phone}}</td>
                         <td class="text-center">{{$contact->comment}}</td>
+                        <td class="text-center">
+
+
+
+                            <form action="{{url(route("contact.destroy",$contact->id)) }}" method="post" style="display: inline-block">
+                                {{ csrf_field() }}
+                                {{ method_field('delete') }}
+                                <button type="submit" class="btn btn-danger delete  btn-sm"><i class="fa  fa-trash"></i> @lang('site.delete')</button>
+                            </form><!-- end of form -->
+
+                        </td>
 
 
 

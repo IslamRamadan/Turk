@@ -229,12 +229,12 @@ if($Statistic){
     public function destroy( $id)
     {
 
-      $contact= ContactMesseg::findOrFail($id);
+      $contact= Contact::findOrFail($id);
        $contact->delete();
       if($contact){
-       session()->flash('success', "success");
+       session()->flash('success', "تم الحذف");
      if(session()->has("success")){
-      Alert::success('Success Title', 'Success Message');
+      Alert::success('Success Title', 'تم الحذف');
       return back();
      }
       }else{

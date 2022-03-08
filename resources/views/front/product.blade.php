@@ -9,9 +9,9 @@
 @section('content')
 
 <div class="container-fluid  p-5">
-    <div class="" style="position: relative">
+    <div class="text-center " style="position: relative">
 
-    <img src="{{url('front/img/20.webp')}}" class="w-100" alt="">
+    <img src="{{url('storage/'.$product->img)}}" class="img-modal" alt="">
     <div class="img-div3" >
         {{-- <h2 class="mb-3">If coldness is of vital importance to you!
         </h2>
@@ -70,7 +70,7 @@
     <div class="row justify-content-center " style="position: relative;">
         <div class="col-lg-4 col-md-6 col-12 mb-3"  >
             <div class="" >
-                <img src="{{url($item->img)}}" class="w-100 cust-hght" alt="">
+                <img src="{{url($item->img)}}" class="w-100 cust-hght img-modal" alt="">
             </div>
         </div>
         <div class="col-lg-8 col-md-6 col-12 mb-3" style="align-self:center" >

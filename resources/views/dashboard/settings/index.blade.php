@@ -209,6 +209,12 @@
     'class' => 'form-control',
 ]) !!}
         </div>
+        <div class="form-group">
+            <label>@lang('site.tiktok_link')</label>
+            {!! Form::text('android', $android, [
+    'class' => 'form-control',
+]) !!}
+        </div>
 
         {{-- <div class="form-group"> --}}
         {{-- <label>@lang('site.color') --}}

@@ -40,7 +40,7 @@
 
         <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
             <div class="" style="position: relative">
-                <img src="{{url('/storage/'.$item->img)}}" alt="" class=" w-100 ">
+                <img src="{{url('/storage/'.$item->img)}}" alt="" class=" w-100 img-modal">
 
 
 

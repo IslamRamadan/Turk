@@ -25,11 +25,11 @@
                     <!-- Article -->
                     <article class="blog-post single">
                         <div class="post-thumb">
-                            <img src="{{url('front/img/20.webp')}}" alt="post-image" class="img-fluid" style="width: 100%;">
+                            <img src="{{url($post->img)}}" alt="post-image" class="img-fluid img-modal" style="width: 100%;">
                         </div>
                         <div class="post-content">
                             <div class="date">
-                                <h4>20<span>May</span></h4>
+                                <h4>{{ $item->updated_at->format('d') }}<span>{{ $item->updated_at->format('M') }}</span></h4>
                             </div>
                             <div class="post-title">
                                 <h3>{!!$post['title_'.app()->getLocale()]!!}</h3>
@@ -101,7 +101,7 @@
         <div class="col-lg-4 col-md-6 col-12 mb-3"  >
             <div class="" style="background-color: rgb(35, 159, 168)">
             {{-- <h5 class="text-center pt-3">Olive Polyethylene BAC / SANDIK</h5> --}}
-            <img src="{{url($item->img)}}" class="w-100 cust-hght" alt="">
+            <img src="{{url($item->img)}}" class="w-100 cust-hght img-modal" alt="">
         </div>
 
         </div>

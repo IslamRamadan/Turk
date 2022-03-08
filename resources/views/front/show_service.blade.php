@@ -46,7 +46,7 @@
             @endphp
             @foreach ($service_images as $one)
                 <div class="carousel-item  @if ($i == 0) active @endif ">
-                    <img class=" w-100  " src="{{ asset($one->img) }}" alt="1 slide">
+                    <img class=" w-100  img-modal" src="{{ asset($one->img) }}" alt="1 slide">
 
                 </div>
                 @php
@@ -132,7 +132,7 @@
 
             </div>
             <div class="col-lg-6 col-md-6 col-12 ">
-                <img src="{{url('/storage/'.$service->section2_img)}}" class="w-100" alt="">
+                <img src="{{url('/storage/'.$service->section2_img)}}" class="w-100 img-modal" alt="">
             </div>
         </div>
     </div>

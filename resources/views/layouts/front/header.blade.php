@@ -28,12 +28,12 @@
     <div class="container  ">
         <div class="float-left">
             <nav class="navbar navbar-expand pad-0 " >
-                <ul class="navbar-nav  pad-0">
+                <ul class="navbar-nav  pad-0" style="direction: ltr">
 
                     <li class="nav-item ">
-                        <a href="tel:{{$my_setting->contact_phone}}" title="" class="nav-link "> <i class="fas fa-phone"></i>  {{$my_setting->contact_phone}}</a></li>
+                        <a href="tel:{{$my_setting->contact_phone}}" title="" class="nav-link ">   {{$my_setting->contact_phone}} &nbsp; <i class="fas fa-phone"></i></a></li>
                     <li class="nav-item ">
-                        <a href="https://wa.me/{{$my_setting->wats}}" title="" class="nav-link "> <i class="fab fa-whatsapp"></i>  {{$my_setting->wats}}</a>
+                        <a href="https://wa.me/{{$my_setting->wats}}" title="" class="nav-link ">   {{$my_setting->wats}} &nbsp; <i class="fab fa-whatsapp"></i></a>
                     </li></ul>
             </nav>
         </div>
@@ -41,11 +41,23 @@
             <nav class="navbar navbar-expand pad-0 " >
                 <ul class="navbar-nav pad-0">
 
+                    @if ($my_setting->insta_link)
                     <li class="nav-item "><a class="nav-link " href="{{$my_setting->insta_link}}" title="instagram"><i class="fab fa-instagram"></i>  </a></li>
+                    @endif
+                    @if ($my_setting->tw_link)
                     <li class="nav-item "><a class="nav-link " href="{{$my_setting->tw_link}}" title="twitter"><i class="fab fa-twitter"></i>  </a></li>
+                    @endif
+                    @if ($my_setting->contact_phone)
                     <li class="nav-item "><a class="nav-link " href="tel:{{$my_setting->contact_phone}}" title="call us"><i class="fas fa-phone"></i>  </a></li>
+                    @endif
+                    @if ($my_setting->yt_link)
                     <li class="nav-item "><a class="nav-link " href="{{$my_setting->yt_link}}" title="youtube"><i class="fab fa-youtube"></i>  </a></li>
+                    @endif
+                    @if ($my_setting->android)
 
+                        {{-- <li class="nav-item "><a class="nav-link " href="{{$my_setting->android}}" title="tiktok"><img src="{{asset('front/img/icons8-tiktok-50.png')}}" style="width: 22px" alt="">  </a></li> --}}
+                        <li class="nav-item "><a class="nav-link " href="{{$my_setting->android}}" title="tiktok"><img src="{{asset('front/img/tiktok.png')}}" width="20px" alt="">  </a></li>
+                    @endif
                 </ul>
 
 

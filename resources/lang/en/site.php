@@ -454,7 +454,9 @@ Why Spend So Much Time And Energy On Home Cleaning When You Can Have A Cleaning 
 'contacts_title_en'=>'عنوان صفحه تواصل معنا بالانجليزيه',
 'sections'=>'الفقرات',
 
-// 'client_galary'=>'Clients Gallery',
+'tiktok_link'=>'Tiktok link',
+'blog_title_ar'=>'عنوان فوق صور الشركات بالعربيه',
+'blog_title_en'=>'عنوان فوق صور الشركات بالانجليزيه',
 // 'title2_en'=>'Section 1 title in English',
 // 'title2_ar'=>'',
 // 'content2_ar'=>'',

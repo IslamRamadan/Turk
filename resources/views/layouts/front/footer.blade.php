@@ -18,7 +18,7 @@
                 @endif
                 </p>
             </div>
-            <div class="col-md-9">
+            <div class="col-lg-9 col-md-7">
 
                 <a href="{{route('home.index')}}">@lang('site.home')</a>
                 <a href="{{route('about.index')}}">@lang('site.about_us')</a>
@@ -29,15 +29,25 @@
 
             </div>
 
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-5">
                 <nav class="navbar navbar-expand pad-0 ">
                     <ul class="navbar-nav mr-auto ">
 
-
+                        @if ($my_setting->insta_link)
                         <li class="nav-item "><a class="nav-link " href="{{$my_setting->insta_link}}" title="instagram"><i class="fab fa-instagram"></i>  </a></li>
+                        @endif
+                        @if ($my_setting->tw_link)
                         <li class="nav-item "><a class="nav-link " href="{{$my_setting->tw_link}}" title="twitter"><i class="fab fa-twitter"></i>  </a></li>
+                        @endif
+                        @if ($my_setting->contact_phone)
                         <li class="nav-item "><a class="nav-link " href="tel:{{$my_setting->contact_phone}}" title="call us"><i class="fas fa-phone"></i>  </a></li>
+                        @endif
+                        @if ($my_setting->yt_link)
                         <li class="nav-item "><a class="nav-link " href="{{$my_setting->yt_link}}" title="youtube"><i class="fab fa-youtube"></i>  </a></li>
+                        @endif
+                        @if ($my_setting->android)
+                        <li class="nav-item "><a class="nav-link " href="{{$my_setting->android}}" title="tiktok"><img src="{{asset('front/img/tiktok.png')}}" width="25px" alt="">  </a></li>
+                        @endif
 
                     </ul>
 
@@ -65,6 +75,61 @@
 
 
 
+
+<!-- Trigger the Modal -->
+
+    <!-- The Modal -->
+    <div id="myModal11" class="modal11">
+
+        <!-- The Close Button -->
+        <span class="close11">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content11" id="img0111">
+
+        <!-- Modal Caption (Image Text) -->
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+
+
+        // Get the modal
+        var modal = document.getElementById("myModal11");
+        var img = $('#myImg').val()
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        // var img = document.getElementById("myImg");
+        // var img = document.getElementsByClassName("myImg");
+        console.log(`Hello`);
+        console.log(img);
+        var modalImg = document.getElementById("img0111");
+
+        $(".img-modal").click(function() {
+            console.log('click on img');
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        });
+        $("#hhh").click(function() {
+            console.log('click on img');
+
+        });
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close11")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        // span.onclick = function() {
+        //     modal.style.display = "none";
+        // }
+        $(span).click(function() {
+            modal.style.display = "none";
+
+        });
+    });
+</script>
 
 
 

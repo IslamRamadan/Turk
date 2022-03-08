@@ -63,6 +63,10 @@
 
             $content3_en = $section->content3_en;
 
+            $blog_title_ar = $section->blog_title_ar;
+
+            $blog_title_en = $section->blog_title_en;
+
             $last_name_ar = $section->last_name_ar;
 
             $last_name_en = $section->last_name_en;
@@ -144,6 +148,8 @@
         $name3_en = '';
         $content3_ar = '';
         $content3_en = '';
+        $blog_title_en ='';
+        $blog_title_ar ='';
         $last_name_ar = '';
         $last_name_en = '';
         $last_title_en = '';
@@ -273,6 +279,15 @@
             <textarea class="form-control" rows="10" name="content3_en">
                           {{ $content3_en }}
                        </textarea>
+        </div>
+
+        <div class="form-group">
+            <label>@lang('site.blog_title_en')</label>
+            <input class="form-control" name="blog_title_en" value="{{ $blog_title_en }}">
+        </div>
+        <div class="form-group">
+            <label>@lang('site.blog_title_ar')</label>
+            <input class="form-control" name="blog_title_ar" value="{{ $blog_title_ar }}">
         </div>
 
 

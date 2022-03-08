@@ -86,7 +86,7 @@ class homeController extends Controller
     }
 
     public function all_posts(){
-       $posts=Post::select('id','img','title_en','title_ar','brief_en','brief_ar','content_en','content_ar')->get();
+       $posts=Post::select('id','img','title_en','title_ar','brief_en','brief_ar','content_en','content_ar','updated_at')->get();
         // dd($posts);
 
         return view('front.all_posts',compact('posts'));
