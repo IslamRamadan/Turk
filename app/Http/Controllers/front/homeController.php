@@ -28,11 +28,8 @@ class homeController extends Controller
     public function index()
     {
         $sliders=Slider::all();
-        $services = Service::select('id','name_en', 'name_ar', 'content_en', 'content_ar','title_en','title_ar','img')->take(4)->get();
-        $categories = Category::select('id','name_en', 'name_ar', 'content_en', 'content_ar','title_en','title_ar','img')->take(2)->get();
-        $products = Product::select('id','title_en','title_ar','img')->where('appearance',1)->get();
 
-        return view('front.index',compact('sliders','services','products','categories'));
+        return view('front.index',compact('sliders'));
     }
 
     public function service_show($id){

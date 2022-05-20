@@ -1,9 +1,6 @@
-
-
 @extends('layouts.front.front')
 @section('title')
-@lang('site.home')
-
+    @lang('site.home')
 @endsection
 @section('content')
     <div id="carouselExampleIndicators" class="carousel slide relative" data-ride="carousel">
@@ -16,13 +13,13 @@
             @php
                 $i = 0;
             @endphp
-            @foreach($sliders as $one)
-            <div class="carousel-item  @if($i==0) active @endif ">
-                <img class=" w-100  " src="{{asset($one->img)}}" alt="1 slide">
+            @foreach ($sliders as $one)
+                <div class="carousel-item  @if ($i == 0) active @endif ">
+                    <img class=" w-100  " src="{{ asset($one->img) }}" alt="1 slide">
 
-            </div>
+                </div>
                 @php
-                    $i ++;
+                    $i++;
                 @endphp
             @endforeach
 
@@ -39,287 +36,346 @@
     </div>
     <!--- end head --->
     <!--- -->
-    <div class="container-fluid  ">
-        <div class="container text-center ">
-            <br>
 
-            <h2>@lang('site.how_works')
-                <hr>
-
-            </h2>
-            <br>
-
-            <div class="row  ">
-                <div class="col-md-3">
-                    @if(Lang::locale()=='ar')
-
-                    <i class="{{$works[0]->icon}}  icon"></i>
-                    <h3>{{$works[0]->title_ar}}</h3>
-                    <p>{{$works[0]->content_ar}}
-                    </p>
-                    <br>
-                    @else
-                        <i class="{{$works[0]->icon}}  icon"></i>
-                        <h3>{{$works[0]->title_en}}</h3>
-                        <p>{{$works[0]->content_en}}
-                        </p>
-                        <br>
-                        @endif
-
-                </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-3 pad-0 d-md-block d-none">
-                            <br> <br> <br> <br>
-                            <img src="{{asset('front/img/awro1.png')}}">
-                        </div>
-                        <div class="col-md-6 pad-0">
-                            @if(Lang::locale()=='ar')
-
-                                <i class="{{$works[1]->icon}}  icon"></i>
-                                <h3>{{$works[1]->title_ar}}</h3>
-                                <p>{{$works[1]->content_ar}}
-                                </p>
-
-
-                            @else
-                                <i class="{{$works[1]->icon}}  icon"></i>
-                                <h3>{{$works[1]->title_en}}</h3>
-                                <p>{{$works[1]->content_en}}
-                                </p>
-                                @endif
-                        </div>
-
-                        <div class="col-md-3 pad-0 d-md-block d-none">
-                            <br> <br> <br>
-                            <img src="{{asset('front/img/awro2.png')}}"></div>
-                    </div> <br></div>
-                <div class="col-md-3">
-                    @if(Lang::locale()=='ar')
-
-                        <i class="{{$works[2]->icon}}  icon"></i>
-                        <h3>{{$works[2]->title_ar}}</h3>
-                        <p>{{$works[2]->content_ar}}
-                        </p>
-                        <br>
-
-                    @else
-
-                        <i class="{{$works[2]->icon}}  icon"></i>
-                        <h3>{{$works[2]->title_en}}</h3>
-                        <p>{{$works[2]->content_en}}
-                        </p>
-                        <br>
-                        @endif
-                </div>
-            </div>
-        </div>
-    <!--- -->
-    <div class="container-fluid text-center ">
+    <div class="container text-center center-p">
         <br>
-        <h2>    @lang('site.services')
 
-            <hr>
-        </h2> <br>
-        <ul class="services-list pad-0">
-            @foreach($my_sevices as $my_sevice)
-            <li><a href="">
-                    <img class="lazy" src="{{asset('front/img/cleaning.png')}}" >
-                    <br>
-                    @if(Lang::locale()=='ar')
+        <h4>{!! $my_section['title2_' . app()->getLocale()] !!}
 
-                    {{$my_sevice->name_ar}}</a></li>
-                    @else
-                    {{$my_sevice->name_en}}</a></li>
+        </h4>
+        <h1>{!! $my_section['content2_' . app()->getLocale()] !!}
+        </h1><br>
 
-                    @endif
-           @endforeach
-            <li><a href="{{route('my_services.index')}}">
-                    <img class="lazy" src="{{asset('front/img/more.png')}}" ><br>
-                    @lang('site.view_more')</a></li>
-        </ul>
+    </div>
+    <div class="container-fluid">
+
+        <div class="row">
+            @foreach ($services as $item)
+                <div class="col-lg-3 col-md-6 col-sm-6 hvr">
+                    <div class="" style="position: relative">
+                        <img src="{{ url('/storage/' . $item->img) }}" alt="" class="w-100 img-modal">
+                        <div class="img-div">
+                            <h5>{!! $item['title_' . app()->getLocale()] !!}</h5>
+                            <h6>{!! $item['name_' . app()->getLocale()] !!}</h6>
+                            @php
+                                $pieces = explode(' ', $item['content_' . app()->getLocale()]);
+                                $content = implode(' ', array_splice($pieces, 0, 10));
+                            @endphp
+                            <p>{!! $content !!}</p>
+                            <a href="{{ route('service.show', $item->id) }}" class="hide-link">
+                                <p>@lang('site.view_more') &nbsp; @if (Lang::locale() == 'ar')
+                                        <i class="fas fa-arrow-right text-light fa-flip-horizontal"></i>
+                                    @else
+                                        <i class="fas fa-arrow-right text-light "></i>
+                                    @endif
+                                </p>
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            @endforeach
+
+            {{-- <div class="col-lg-3 col-md-6 col-sm-6 hvr">
+                <div class="" style="position: relative">
+                    <img src="{{url('front/img/3.webp')}}" alt="" class="w-100">
+                    <div class="img-div" >
+                        <h5>Dry ice</h5>
+                        <h6>Dry ice</h6>
+                        <p>
+                            Dry ice is the name given to the solid state of carbon dioxide. found in Earth's atmosphere
+                        </p>
+                        <a href="{{route('my_projects.index')}}" class="hide-link">
+                            <p>More &nbsp;  @if (Lang::locale() == 'ar')
+                                <i class="fas fa-arrow-right text-light fa-flip-horizontal"></i>
+                                @else
+                                <i class="fas fa-arrow-right text-light "></i>
+                                @endif
+                            </p>
+                        </a>
+
+
+                        </div>
+
+                </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 hvr">
+                <div class="" style="position: relative">
+                    <img src="{{url('front/img/1.webp')}}" alt="" class="w-100">
+                    <div class="img-div" >
+                        <h5>Dry ice</h5>
+                        <h6>Dry ice</h6>
+                        <p>
+                            Dry ice is the name given to the solid state of carbon dioxide. found in Earth's atmosphere
+                        </p>
+                        <a href="{{route('my_projects.index')}}" class="hide-link">
+                            <p>More &nbsp;  @if (Lang::locale() == 'ar')
+                                <i class="fas fa-arrow-right text-light fa-flip-horizontal"></i>
+                                @else
+                                <i class="fas fa-arrow-right text-light "></i>
+                                @endif
+                            </p>
+                        </a>
+
+
+                        </div>
+
+                </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 hvr">
+                <div class="" style="position: relative">
+                    <img src="{{url('front/img/2.webp')}}" alt="" class="w-100">
+                    <div class="img-div" >
+                        <h5>Dry ice</h5>
+                        <h6>Dry ice</h6>
+                        <p>
+                            Dry ice is the name given to the solid state of carbon dioxide. found in Earth's atmosphere
+                        </p>
+                        <a href="{{route('my_projects.index')}}" class="hide-link">
+                            <p>More &nbsp;
+                                @if (Lang::locale() == 'ar')
+                                <i class="fas fa-arrow-right text-light fa-flip-horizontal"></i>
+                                @else
+                                <i class="fas fa-arrow-right text-light "></i>
+                                @endif
+                            </p>
+                        </a>
+
+
+                        </div>
+
+                </div>
+
+            </div> --}}
+
+
+        </div>
+    </div>
+    <div class="container text-center center-p">
+        <br>
+
+        <h4 class="mb-4">{!! $my_section['title1_' . app()->getLocale()] !!}</h4>
+        <h1>{!! $my_section['name1_' . app()->getLocale()] !!}
+        </h1>
+        <p>{!! $my_section['content1_' . app()->getLocale()] !!}</p>
+        <br>
+
     </div>
 
-    <!--- -->
-    <div class="container text-center ">
+    <div class="container-fluid">
+
+        <div class="row">
+            @foreach ($categories as $item)
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                    <a href="{{ route('category.show', $item->id) }}">
+                        <div class="" style="position: relative">
+                            <img src="{{ url('/storage/' . $item->img) }}" alt="" class="w-100 bright-50">
+                            <div class="img-div1">
+                                <h2>{!! $item['name_' . app()->getLocale()] !!}</h2>
+
+
+
+                            </div>
+                            <div class="img-div2">
+                                <h5>{!! $item['title_' . app()->getLocale()] !!}</h5>
+
+                            </div>
+
+                        </div>
+                    </a>
+
+                </div>
+            @endforeach
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <div class="container text-center center-p1">
+
+        <div class="component">
+            <blockquote class="callout quote EN">
+                <h2> {!! $my_section['qoute1_' . app()->getLocale()] !!}
+                </h2>
+            </blockquote>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            @foreach ($products as $item)
+                <div class="col-lg-6 col-md-6 col-sm-12 ">
+                    <div class="" style="position: relative">
+                        <img src="{{ url('storage/' . $item->img) }}" alt="" class="w-100 img-modal">
+                        <div class="text-center">
+                            <a href="{{ route('product.show', $item->id) }}"
+                                class="btn btn-primary m-5">@lang('site.view_more') &nbsp; &nbsp;
+                                @if (Lang::locale() == 'ar')
+                                    <i class="fas fa-arrow-right text-light fa-flip-horizontal"></i>
+                                @else
+                                    <i class="fas fa-arrow-right text-light "></i>
+                                @endif
+
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            @endforeach
+            {{-- <div class="col-lg-6 col-md-6 col-sm-12 ">
+                        <div class="" style="position: relative">
+                            <img src="{{url('front/img/8.webp')}}" alt="" class="w-100">
+                            <div class="text-center">
+                                <a href="{{route('product.show')}}" class="btn btn-primary m-5">@lang('site.view_more') &nbsp; &nbsp;
+                                    @if (Lang::locale() == 'ar')
+                                    <i class="fas fa-arrow-right text-light fa-flip-horizontal"></i>
+                                    @else
+                                    <i class="fas fa-arrow-right text-light "></i>
+                                    @endif
+                                </a>
+                                     </div>
+
+
+                        </div>
+
+                    </div> --}}
+
+
+
+
+        </div>
+    </div>
+
+    <div class="container text-center center-p ">
         <br>
-        <h2>@lang('site.why_works')
+        <h4 class="mb-4">{!! $my_section['title3_' . app()->getLocale()] !!}</h4>
+        <h1>{!! $my_section['name3_' . app()->getLocale()] !!}</h1>
+        <p>{!! $my_section['content3_' . app()->getLocale()] !!}</p>
+        {{-- <br>
+                <button class="btn btn-one">@lang('site.references')
+                </button>
+                <br> --}}
+    </div>
+
+    <div class="container-fluid  ">
+        <br>
+
+        <h2 class="text-center">{!! $my_section['blog_title_' . app()->getLocale()] !!}
             <hr>
-        </h2> <br>
-        <div class="row text-left">
-            @foreach($works as $work)
-
-                @if(Lang::locale()=='ar')
-                    <div class="col-lg-4 col-md-6 col-12">
-
-                        <div class="row row3 pad">
-
-
-                            <div class="col-3 ">
-                                <br>
-                                <i class="{{$work->icon}}  icon" ></i>
-                            </div>
-                            <div class="col-9 ">
-                                <h3>{{$work->title_ar}}</h3>
-                                <p>{{$work->content_ar}}
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                @else
-
-                    <div class="col-lg-4 col-md-6 col-12">
-
-                        <div class="row row3 pad">
-
-
-                            <div class="col-3 ">
-                                <br>
-                                <i class="{{$work->icon}}  icon" ></i>
-                            </div>
-                            <div class="col-9 ">
-                                <h3>{{$work->title_en}}</h3>
-                                <p>{{$work->content_en}}
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                @endif
-
+        </h2>
+        <br>
+        <div class="row align-items-center">
+            @foreach (App\Models\ClientImg::all() as $item)
+                <div class="col-lg-2 col-md-3 col-4">
+                    <img src="{{ url($item->img) }}" alt="" style="
+                                width: -webkit-fill-available;
+                            ">
+                </div>
             @endforeach
 
         </div>
+
     </div>
 
-    <!--- -->
-    <div class="container-fluid text-center">
-        <br> <br> <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-6">
-                    <div class="circle">
-                        <i class="fas fa-thumbs-up"></i>
-                    </div>
-                    <h2>100%</h2>
-                    <p>@lang('site.quality')</p>
-                    <br>  </div>
+    <div class="container text-center center-p1">
 
-                <div class="col-md-4 col-6">
-                    <div class="circle">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h2>100+</h2>
-                    <p>@lang('site.employees')</p>
-                    <br>  </div>
+        <div class="component">
+            <blockquote class="callout quote EN">
+                <h2>{!! $my_section['qoute2_' . app()->getLocale()] !!}
+                </h2>
+            </blockquote>
+        </div>
+    </div>
 
-                <div class="col-md-4 col-12">
-                    <div class="circle">
-                        <i class="fas fa-calendar"></i>
-                    </div>
-                    <h2>5+</h2>
-                    <p><p>@lang('site.years_experience')</p></p>
-                    <br>  </div>
+
+
+    <div class="container-fluid">
+        <br>
+
+        <h4 class="custom-h4">{!! $my_section['last_title_' . app()->getLocale()] !!}
+        </h4>
+
+        <div class="row">
+
+
+            <div class="col-md-3 col-12 align-self-center">
+                <h3 class="mb-5">{!! $my_section['last_name_' . app()->getLocale()] !!}</h3>
+                <p>{!! $my_section['last_content_' . app()->getLocale()] !!}</p>
             </div>
-
+            <div class="col-md-9 col-12">
+                <img src="{{ url('storage/' . $my_section->img) }}" alt="" class="w-100 img-modal">
+            </div>
 
         </div>
     </div>
-    <!--- -->
 
+    <div class="container-fluid contact-container">
+        <div class="row justify-content-between">
+            <div class="col-lg-4 col-md-6 col-12 mt-sm-3">
+                <h1>{!! $my_section['contact_name_' . app()->getLocale()] !!}</h1>
 
+                <br>
+                <br>
+                <p>{!! $my_section['contact_content_' . app()->getLocale()] !!}</p>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 cus-form">
+                {!! Form::model('', ['route' => ['contacts.store'], 'method' => 'post']) !!}
+                {{ csrf_field() }}
+                <div class="form">
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" name="name" placeholder="@lang('site.name')"
+                                value="{{ old('name') }}">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" name="phone" placeholder="@lang('site.phone')"
+                                value="{{ old('phone') }}">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        </label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" name="email" placeholder="@lang('site.email')"
+                                value="{{ old('email') }}">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <textarea rows="3" name="comment" placeholder="Write message here..."
+                                class="form-control">{{ old('comment') }}</textarea>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        <div class="col-sm-12 text-center">
+                            <button type="submit" class="btn btn-primary ">@lang('site.submit')</button>
+                        </div>
+                    </div>
 
+                </div>
+                {!! Form::close() !!}
 
-
-    <!-- country -->
-    <div class="country ">
-
-        <div class="relative">
-
-            <video class="h-100 w-100 " autoplay controls muted>
-                <source src="{{asset('front/vedio/monstroid.mp4')}}" type="video/mp4" >
-            </video>
-            <div class="abs-shop text-center">
-                <button class=" btn bg-main close-country  "> @lang('site.continue')  </button>
             </div>
 
-            <br> </div>
-
+        </div>
     </div>
-    </div>
-
-
-
-
-
 @endsection
-
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        {{--<script>--}}
-            {{----}}
-            {{----}}
-            {{--$('img[data-enlargeable]').addClass('img-enlargeable').click(function() {--}}
-                {{--var src = $(this).attr('src');--}}
-                {{--var modal;--}}
-
-                {{--function removeModal() {--}}
-                    {{--modal.remove();--}}
-                    {{--$('body').off('keyup.modal-close');--}}
-                {{--}--}}
-                {{--modal = $('<div>').css({--}}
-                    {{--background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',--}}
-                    {{--backgroundSize: 'contain',--}}
-                    {{--width: '100%',--}}
-                    {{--height: '100%',--}}
-                    {{--position: 'fixed',--}}
-                    {{--zIndex: '10000',--}}
-                    {{--top: '0',--}}
-                    {{--left: '0',--}}
-                    {{--cursor: 'zoom-out'--}}
-                {{--}).click(function() {--}}
-                    {{--removeModal();--}}
-                {{--}).appendTo('body');--}}
-                {{--//handling ESC--}}
-                {{--$('body').on('keyup.modal-close', function(e) {--}}
-                    {{--if (e.key === 'Escape') {--}}
-                        {{--removeModal();--}}
-                    {{--}--}}
-                {{--});--}}
-            {{--});--}}
-        {{--</script>--}}
-{{--<script>--}}
-    {{--const image = document.querySelector(".clickable-image");--}}
-
-    {{--image.addEventListener("click", function(){--}}
-        {{--image.classList.add("image-open");--}}
-    {{--})--}}
-{{--</script>--}}
-
-<script>
-    // Get the modal
-    var modal = document.getElementById("myModal");
-
-    // Get the image and insert it inside the modal - use its "alt" text as a caption
-    var img = document.getElementById("myImg");
-    var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("caption");
-    img.onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-    }
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-</script>

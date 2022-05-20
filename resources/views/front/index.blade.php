@@ -37,345 +37,182 @@
     <!--- end head --->
     <!--- -->
 
-    <div class="container text-center center-p">
-        <br>
-
-        <h4>{!! $my_section['title2_' . app()->getLocale()] !!}
-
-        </h4>
-        <h1>{!! $my_section['content2_' . app()->getLocale()] !!}
-        </h1><br>
-
-    </div>
-    <div class="container-fluid">
-
+    <div class="container">
         <div class="row">
-            @foreach ($services as $item)
-                <div class="col-lg-3 col-md-6 col-sm-6 hvr">
-                    <div class="" style="position: relative">
-                        <img src="{{ url('/storage/' . $item->img) }}" alt="" class="w-100 img-modal">
-                        <div class="img-div">
-                            <h5>{!! $item['title_' . app()->getLocale()] !!}</h5>
-                            <h6>{!! $item['name_' . app()->getLocale()] !!}</h6>
-                            @php
-                                $pieces = explode(' ', $item['content_' . app()->getLocale()]);
-                                $content = implode(' ', array_splice($pieces, 0, 10));
-                            @endphp
-                            <p>{!! $content !!}</p>
-                            <a href="{{ route('service.show', $item->id) }}" class="hide-link">
-                                <p>@lang('site.view_more') &nbsp; @if (Lang::locale() == 'ar')
-                                        <i class="fas fa-arrow-right text-light fa-flip-horizontal"></i>
-                                    @else
-                                        <i class="fas fa-arrow-right text-light "></i>
-                                    @endif
-                                </p>
-                            </a>
-
-
+            <div class="col-lg-6 col-12 p-2">
+                <div class="rounded-img">
+                    <img src="{{ asset('front/img/1.webp') }}" class="w-100" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 col-12 align-self-center">
+                <div class="">
+                    <div class="text-center">
+                        <h2>شركة نقل عفش بالمدينة المنورة 0545140796 ‏ أفضل سيارات مغلقه
+                        </h2>
+                        <br>
+                        <h4>أنت تتحرك بينما نحن نتحرك لأجلك .</h4>
+                        <br>
+                        <button class="btn btn-primary">تعرف علي المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-12">
+                <div class="">
+                    <div class="shadow-box">
+                        <div class="fast">
+                            <h3 class="c-green">السرعة</h3>
+                            <p>لدينا سيارات مجهزة وعمالة مدربة وجاهزون فى اى وقت للتحرك .</p>
                         </div>
+                        <div class="fast-icon">
+                            <img src="{{ asset('front/img/2.webp') }}" class="w-100" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                <div class="">
+                    <div class="shadow-box">
+                        <div class="fast">
+                            <h3 class="c-green">أفضل خدمة</h3>
+                            <p>لدينا فريق دعم فني كامل لتلقى طلباتكم وإستفساراتكم . </p>
+                        </div>
+                        <div class="fast-icon">
+                            <img src="{{ asset('front/img/3.webp') }}" class="w-100" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                <div class="">
+                    <div class="shadow-box">
+                        <div class="fast">
+                            <h3 class="c-green">أفضل سعر</h3>
+                            <p>أفضل الأسعار ستحصل عليها مع شركة تبارك المدينة .</p>
+                        </div>
+                        <div class="fast-icon">
+                            <img src="{{ asset('front/img/4.webp') }}" class="w-100" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mt-5 mb-5">
+        <div class="row justify-content-around align-items-center">
+            <div class="col-md-4 col-12 text-center">
+                <img src="{{ asset('front/img/5.webp') }}" class="w-80" alt="">
+            </div>
+            <div class="col-md-7 col-12 ">
+                <div class="green-section">
+                    <h2 class="mb-2">شركة نقل أثاث بالمدينة المنورة</h2>
+                    <p>
+                        شركة تبارك المدينة لنقل العفش والأثاث داخل وخارج المدينة المنورة ومن وإلى أى مكان فى المملكة العربية
+                        السعوديه , لدينا اسطول من السيارات المجهزه والمغلقه لنقل الأثاث والحفاظ عليه من أى خدوش أو كسور
+                        ولأننا نسعي إلى تقديم كل ما هو حديث ومفيد لعملاء شركة تبارك المدينة فأننا نوظف لدينا عمالة مدربة
+                        وواعيه لتنفيذ الأعمال بإتقان وسرعة وإحترافيه ومهنية .
+                    </p>
+                    <div class="text-center">
+                        <button class="btn btn-primary">تعرف علي المزيد</button>
 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-12 align-self-center">
+                <div class="text-center">
+                    <h1 class="c-green">شركائنا</h1>
+                    <p>
+                        شركاء نجاح شركة تبارك المدينة .
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-8 col-12 ">
+                <div class="row">
+                    <div class="col-md-4 col-12 text-center">
+                        <div class="p-1">
+                            <img src="{{ asset('front/img/6.webp') }}" width="150" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12 text-center">
+                        <div class="p-1">
+                            <img src="{{ asset('front/img/7.webp') }}" width="150" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12 text-center">
+                        <div class="p-1">
+                            <img src="{{ asset('front/img/8.webp') }}" width="150" alt="">
+                        </div>
                     </div>
 
                 </div>
-            @endforeach
-
-            {{-- <div class="col-lg-3 col-md-6 col-sm-6 hvr">
-                <div class="" style="position: relative">
-                    <img src="{{url('front/img/3.webp')}}" alt="" class="w-100">
-                    <div class="img-div" >
-                        <h5>Dry ice</h5>
-                        <h6>Dry ice</h6>
-                        <p>
-                            Dry ice is the name given to the solid state of carbon dioxide. found in Earth's atmosphere
-                        </p>
-                        <a href="{{route('my_projects.index')}}" class="hide-link">
-                            <p>More &nbsp;  @if (Lang::locale() == 'ar')
-                                <i class="fas fa-arrow-right text-light fa-flip-horizontal"></i>
-                                @else
-                                <i class="fas fa-arrow-right text-light "></i>
-                                @endif
-                            </p>
-                        </a>
-
-
-                        </div>
-
-                </div>
-
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 hvr">
-                <div class="" style="position: relative">
-                    <img src="{{url('front/img/1.webp')}}" alt="" class="w-100">
-                    <div class="img-div" >
-                        <h5>Dry ice</h5>
-                        <h6>Dry ice</h6>
-                        <p>
-                            Dry ice is the name given to the solid state of carbon dioxide. found in Earth's atmosphere
-                        </p>
-                        <a href="{{route('my_projects.index')}}" class="hide-link">
-                            <p>More &nbsp;  @if (Lang::locale() == 'ar')
-                                <i class="fas fa-arrow-right text-light fa-flip-horizontal"></i>
-                                @else
-                                <i class="fas fa-arrow-right text-light "></i>
-                                @endif
-                            </p>
-                        </a>
-
-
-                        </div>
-
-                </div>
-
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 hvr">
-                <div class="" style="position: relative">
-                    <img src="{{url('front/img/2.webp')}}" alt="" class="w-100">
-                    <div class="img-div" >
-                        <h5>Dry ice</h5>
-                        <h6>Dry ice</h6>
-                        <p>
-                            Dry ice is the name given to the solid state of carbon dioxide. found in Earth's atmosphere
-                        </p>
-                        <a href="{{route('my_projects.index')}}" class="hide-link">
-                            <p>More &nbsp;
-                                @if (Lang::locale() == 'ar')
-                                <i class="fas fa-arrow-right text-light fa-flip-horizontal"></i>
-                                @else
-                                <i class="fas fa-arrow-right text-light "></i>
-                                @endif
-                            </p>
-                        </a>
-
-
-                        </div>
-
-                </div>
-
-            </div> --}}
-
-
         </div>
     </div>
-    <div class="container text-center center-p">
-        <br>
-
-        <h4 class="mb-4">{!! $my_section['title1_' . app()->getLocale()] !!}</h4>
-        <h1>{!! $my_section['name1_' . app()->getLocale()] !!}
-        </h1>
-        <p>{!! $my_section['content1_' . app()->getLocale()] !!}</p>
-        <br>
-
-    </div>
-
-    <div class="container-fluid">
-
+    <div class="container">
         <div class="row">
-            @foreach ($categories as $item)
-                <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                    <a href="{{ route('category.show', $item->id) }}">
-                        <div class="" style="position: relative">
-                            <img src="{{ url('/storage/' . $item->img) }}" alt="" class="w-100 bright-50">
-                            <div class="img-div1">
-                                <h2>{!! $item['name_' . app()->getLocale()] !!}</h2>
-
-
-
-                            </div>
-                            <div class="img-div2">
-                                <h5>{!! $item['title_' . app()->getLocale()] !!}</h5>
-
-                            </div>
-
-                        </div>
+            <div class="col-md-4 col-12">
+                <div class="post-img">
+                    <img src="{{ asset('front/img/9.webp') }}" class="w-100" alt="">
+                </div>
+                <div class="post-content">
+                    <a href="">
+                        <h5>شركة عزل خزانات بالمدينه المنوره شركة تبارك 0545140796</h5>
                     </a>
+                    <p>عزل خزانات بالمدينه المنوره شركة تبارك 0545140796 تقدم لك شركة عزل خزانات بالمدينه المنوره أفضل
+                        الخدمات اللازم لك عزيزي العميل ، حيث أنها من أفضل
 
+                    </p>
                 </div>
-            @endforeach
-
-
-
-
-
-
-
-        </div>
-    </div>
-
-    <div class="container text-center center-p1">
-
-        <div class="component">
-            <blockquote class="callout quote EN">
-                <h2> {!! $my_section['qoute1_' . app()->getLocale()] !!}
-                </h2>
-            </blockquote>
-        </div>
-    </div>
-
-
-
-    <div class="container-fluid">
-
-        <div class="row">
-            @foreach ($products as $item)
-                <div class="col-lg-6 col-md-6 col-sm-12 ">
-                    <div class="" style="position: relative">
-                        <img src="{{ url('storage/' . $item->img) }}" alt="" class="w-100 img-modal">
-                        <div class="text-center">
-                            <a href="{{ route('product.show', $item->id) }}"
-                                class="btn btn-primary m-5">@lang('site.view_more') &nbsp; &nbsp;
-                                @if (Lang::locale() == 'ar')
-                                    <i class="fas fa-arrow-right text-light fa-flip-horizontal"></i>
-                                @else
-                                    <i class="fas fa-arrow-right text-light "></i>
-                                @endif
-
-                            </a>
-                        </div>
-
-                    </div>
-
+            </div>
+            <div class="col-md-4 col-12">
+                <div class="post-img">
+                    <img src="{{ asset('front/img/10.webp') }}" class="w-100" alt="">
                 </div>
-            @endforeach
-            {{-- <div class="col-lg-6 col-md-6 col-sm-12 ">
-                        <div class="" style="position: relative">
-                            <img src="{{url('front/img/8.webp')}}" alt="" class="w-100">
-                            <div class="text-center">
-                                <a href="{{route('product.show')}}" class="btn btn-primary m-5">@lang('site.view_more') &nbsp; &nbsp;
-                                    @if (Lang::locale() == 'ar')
-                                    <i class="fas fa-arrow-right text-light fa-flip-horizontal"></i>
-                                    @else
-                                    <i class="fas fa-arrow-right text-light "></i>
-                                    @endif
-                                </a>
-                                     </div>
+                <div class="post-content">
+                    <a href="">
+                        <h5>شركة عزل خزانات بالمدينه المنوره شركة تبارك 0545140796</h5>
+                    </a>
+                    <p>عزل خزانات بالمدينه المنوره شركة تبارك 0545140796 تقدم لك شركة عزل خزانات بالمدينه المنوره أفضل
+                        الخدمات اللازم لك عزيزي العميل ، حيث أنها من أفضل
 
-
-                        </div>
-
-                    </div> --}}
-
-
-
-
-        </div>
-    </div>
-
-    <div class="container text-center center-p ">
-        <br>
-        <h4 class="mb-4">{!! $my_section['title3_' . app()->getLocale()] !!}</h4>
-        <h1>{!! $my_section['name3_' . app()->getLocale()] !!}</h1>
-        <p>{!! $my_section['content3_' . app()->getLocale()] !!}</p>
-        {{-- <br>
-                <button class="btn btn-one">@lang('site.references')
-                </button>
-                <br> --}}
-    </div>
-
-    <div class="container-fluid  ">
-        <br>
-
-        <h2 class="text-center">{!! $my_section['blog_title_' . app()->getLocale()] !!}
-            <hr>
-        </h2>
-        <br>
-        <div class="row align-items-center">
-            @foreach (App\Models\ClientImg::all() as $item)
-                <div class="col-lg-2 col-md-3 col-4">
-                    <img src="{{ url($item->img) }}" alt="" style="
-                                width: -webkit-fill-available;
-                            ">
+                    </p>
                 </div>
-            @endforeach
-
-        </div>
-
-    </div>
-
-    <div class="container text-center center-p1">
-
-        <div class="component">
-            <blockquote class="callout quote EN">
-                <h2>{!! $my_section['qoute2_' . app()->getLocale()] !!}
-                </h2>
-            </blockquote>
-        </div>
-    </div>
-
-
-
-    <div class="container-fluid">
-        <br>
-
-        <h4 class="custom-h4">{!! $my_section['last_title_' . app()->getLocale()] !!}
-        </h4>
-
-        <div class="row">
-
-
-            <div class="col-md-3 col-12 align-self-center">
-                <h3 class="mb-5">{!! $my_section['last_name_' . app()->getLocale()] !!}</h3>
-                <p>{!! $my_section['last_content_' . app()->getLocale()] !!}</p>
             </div>
-            <div class="col-md-9 col-12">
-                <img src="{{ url('storage/' . $my_section->img) }}" alt="" class="w-100 img-modal">
-            </div>
-
-        </div>
-    </div>
-
-    <div class="container-fluid contact-container">
-        <div class="row justify-content-between">
-            <div class="col-lg-4 col-md-6 col-12 mt-sm-3">
-                <h1>{!! $my_section['contact_name_' . app()->getLocale()] !!}</h1>
-
-                <br>
-                <br>
-                <p>{!! $my_section['contact_content_' . app()->getLocale()] !!}</p>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12 cus-form">
-                {!! Form::model('', ['route' => ['contacts.store'], 'method' => 'post']) !!}
-                {{ csrf_field() }}
-                <div class="form">
-                    <div class="form-group row">
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" name="name" placeholder="@lang('site.name')"
-                                value="{{ old('name') }}">
-                        </div>
-                    </div>
-                    <br>
-                    <div class="form-group row">
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" name="phone" placeholder="@lang('site.phone')"
-                                value="{{ old('phone') }}">
-                        </div>
-                    </div>
-                    <br>
-                    <div class="form-group row">
-                        </label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" name="email" placeholder="@lang('site.email')"
-                                value="{{ old('email') }}">
-                        </div>
-                    </div>
-                    <br>
-                    <div class="form-group row">
-                        <div class="col-sm-12">
-                            <textarea rows="3" name="comment" placeholder="Write message here..."
-                                class="form-control">{{ old('comment') }}</textarea>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="form-group row">
-                        <div class="col-sm-12 text-center">
-                            <button type="submit" class="btn btn-primary ">@lang('site.submit')</button>
-                        </div>
-                    </div>
-
+            <div class="col-md-4 col-12">
+                <div class="post-img">
+                    <img src="{{ asset('front/img/11.webp') }}" class="w-100" alt="">
                 </div>
-                {!! Form::close() !!}
+                <div class="post-content">
+                    <a href="">
+                        <h5>شركة عزل خزانات بالمدينه المنوره شركة تبارك 0545140796</h5>
+                    </a>
+                    <p>عزل خزانات بالمدينه المنوره شركة تبارك 0545140796 تقدم لك شركة عزل خزانات بالمدينه المنوره أفضل
+                        الخدمات اللازم لك عزيزي العميل ، حيث أنها من أفضل
 
+                    </p>
+                </div>
             </div>
+            <div class="col-md-4 col-12">
+                <div class="post-img">
+                    <img src="{{ asset('front/img/12.webp') }}" class="w-100" alt="">
+                </div>
+                <div class="post-content">
+                    <a href="">
+                        <h5>شركة عزل خزانات بالمدينه المنوره شركة تبارك 0545140796</h5>
+                    </a>
+                    <p>عزل خزانات بالمدينه المنوره شركة تبارك 0545140796 تقدم لك شركة عزل خزانات بالمدينه المنوره أفضل
+                        الخدمات اللازم لك عزيزي العميل ، حيث أنها من أفضل
 
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
